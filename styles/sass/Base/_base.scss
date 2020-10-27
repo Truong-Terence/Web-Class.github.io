@@ -1,5 +1,3 @@
-@import "./../Utils/utils";
-
 header{
     width: auto;
     font-family: "Cantarell", sans-serif;
@@ -9,6 +7,23 @@ header{
 body{
     width: auto;
     height: auto;
-    background-color:#ffff;
+    background-color: $clr_background;
     font-family: "Cantarell", sans-serif;
+    header{
+        // TODO: Twitter Git fb OC
+        
+    }
+    nav ul{
+        width: auto;
+        list-style: none;
+        li a{
+            font-family: "Baloo", "sans-serif";
+        }
+    }
+}
+
+@media screen and (max-width: 1280px){
+    #main > .inner{
+        padding: 0 4em 0.1em 4em ;
+    }
 }

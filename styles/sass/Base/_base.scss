@@ -1,11 +1,20 @@
 header{
     width: auto;
-    font-family: "Cantarell";
-    
+    font-family: "Cantarell", sans-serif;
+    font-weight: bold;
 }
 
 body{
     width: auto;
-    background-color:pink;
-    font-family: "Cantarell";
+    background-color:#ffbe76;
+    font-family: "Cantarell", sans-serif;
+}
+
+body nav ul{
+    width: auto;
+    list-style: none;
+}
+
+body nav ul li a{
+    font-family: "Baloo", "sans-serif";
 }

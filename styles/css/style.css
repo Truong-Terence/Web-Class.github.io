@@ -9,12 +9,10 @@ body {
   background-color: #ffbe76;
   font-family: "Cantarell", sans-serif;
 }
-
 body nav ul {
   width: auto;
   list-style: none;
 }
-
 body nav ul li a {
   font-family: "Baloo", "sans-serif";
 }

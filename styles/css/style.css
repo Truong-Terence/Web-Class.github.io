@@ -6,17 +6,9 @@ header {
 
 body {
   width: auto;
-  background-color: #ffbe76;
+  height: auto;
+  background-color: #ffff;
   font-family: "Cantarell", sans-serif;
-}
-
-body nav ul {
-  width: auto;
-  list-style: none;
-}
-
-body nav ul li a {
-  font-family: "Baloo", "sans-serif";
 }
 
 @font-face {
@@ -29,6 +21,69 @@ body nav ul li a {
 @font-face {
   font-family: "Baloo";
   src: url("../fonts/Baloo/Baloo-Regular.ttf");
+}
+nav {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  width: 33%;
+  overflow: auto;
+  background-color: #d5d0f5;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+nav .search-container {
+  background-color: #7451eb;
+  height: 100px;
+}
+nav input {
+  float: left;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 15px;
+  width: 80%;
+  height: 30px;
+  cursor: text;
+}
+nav .icon-search {
+  float: left;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 15px;
+  width: 30px;
+  height: 5px;
+}
+nav h2 {
+  color: #7451eb;
+  font-style: bold;
+  border-bottom: 3px #7451eb solid;
+  margin: 5px;
+  padding: 5PX;
+}
+nav ul {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  display: inline-block;
+  width: 70%;
+  padding: 5px;
+  margin: 5px;
+  border-bottom: 1px #7451eb solid;
+}
+nav a {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: #7451eb;
+}
+nav a:hover {
+  color: #4d35a3;
 }
 
 /*# sourceMappingURL=style.css.map */

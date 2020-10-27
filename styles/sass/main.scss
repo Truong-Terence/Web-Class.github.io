@@ -7,11 +7,11 @@
 //themes/, c’est ici que vous stockez le code thématique, par exemple un style customisé pour Noël ou pour l’été. On ne l’utilisera pas dans notre site ;
 //vendors/ est un directory pour des feuilles de style externes comme Bootstrap ou jQuery UI. En gros, il s’utilise pour tout CSS venant de l’extérieur. Utiliser des frameworks comme Bootstrap permet d’accélérer le développement d’un site, car ils contiennent des feuilles de style prédéfinies pour des choses comme les formulaires ou des boutons.
 
+@import"./Utils/utils";
 @import"./Base/base";
 @import"./Base/fonts";
 @import"./Composants/composants";
 @import"./Layout/layout";
 @import"./Pages/pages";
 @import"./Themes/theme";
-@import"./Utils/utils";
 @import"./Vendors/vendors";

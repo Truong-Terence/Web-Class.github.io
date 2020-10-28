@@ -1,45 +1,5 @@
 body{
     width: 100%;
-    header{
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        width: 100%;
-        height: $top_side;
-        #separation_border{
-            z-index: 1;
-            position: absolute;
-            top: -1px;
-            border-bottom: 2px solid $oprcolor;
-            width: 100%;
-            height: $top_side;
-        
-        }
-
-        > a {
-            text-decoration: none;
-        }
-        .logo{
-        font-size: 1.2em;
-        margin-bottom: 0;
-            > p > strong{
-            font-size: 1.5em;
-            }
-        }
-        .icons{
-        display: flex;
-        list-style-type: none;
-            li{
-            cursor: pointer;
-            margin-right: 25px;
-            }
-          >:hover{
-                transform: scale(1.1) rotate(360deg);
-                transition: cubic-bezier(.98,.05,.01,1.07) 2s;
-                filter: invert(100%);
-            }
-        }
-    }
     nav{
         position : absolute;
         z-index: 1;
@@ -97,19 +57,70 @@ body{
                     color: $oprhover;
                     }
     }
-}
-#hide{
-    cursor: pointer;
-    border: 5px $oprcolor solid;
-    border-radius: 10px 100px / 120px;
-    width: 50px;
-    height: 50px;
-    .trait{
-        background: $oprcolor;
-        width: 7;
-        height: 5px;
-        padding: 1px;
-        margin: 4px;
-        align-items: center;
-    }    
+    #main{
+        #smaller_main{
+            #hide{
+                position: absolute;
+                left: 5px;
+                top: 10px;
+                cursor: pointer;
+                border: 0px $oprcolor solid;
+                border-radius: 10px 100px / 120px;
+                width: 30px;
+                height: 30px;
+                .trait{
+                    background: $oprcolor;
+                    width: 30px;
+                    height: 3px;
+                    padding: 1px;
+                    margin: 4px;
+                    align-items: center;
+                }    
+            }
+            header{
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                width: 100%;
+                height: $top_side;
+                #separation_border{
+                    z-index: 1;
+                    position: absolute;
+                    top: -1px;
+                    border-bottom: 2px solid $oprcolor;
+                    width: 100%;
+                    height: $top_side;
+                    > a {
+                        text-decoration: none;
+                    }
+                }
+                .logo{
+
+                    font-size: 1.2em;
+                    float: left;
+                    transform: translate(0%, 80%);
+                        > p > strong{
+                        font-size: 1.5em;
+                        }
+                }
+                .icons{
+                    float: right;
+                    transform: translate(0%, 120%);
+                    display: flex;
+                    justify-content: flex-end;
+                    list-style-type: none;
+                        li{
+                        cursor: pointer;
+                        margin-right: 25px;
+                        }
+                    >:hover{
+                        transform: scale(1.1) rotate(360deg);
+                        transition: cubic-bezier(.98,.05,.01,1.07) 2s;
+                        filter: invert(100%);
+                    }
+                }
+            }            
+        }
+    }
+        
 }

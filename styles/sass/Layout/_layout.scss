@@ -33,6 +33,11 @@ body{
             cursor: pointer;
             margin-right: 25px;
             }
+          >:hover{
+                transform: scale(1.1) rotate(360deg);
+                transition: cubic-bezier(.98,.05,.01,1.07) 2s;
+                filter: invert(100%);
+            }
         }
     }
     nav{
@@ -93,4 +98,18 @@ body{
                     }
     }
 }
-
+#hide{
+    cursor: pointer;
+    border: 5px $oprcolor solid;
+    border-radius: 10px 100px / 120px;
+    width: 50px;
+    height: 50px;
+    .trait{
+        background: $oprcolor;
+        width: 7;
+        height: 5px;
+        padding: 1px;
+        margin: 4px;
+        align-items: center;
+    }    
+}

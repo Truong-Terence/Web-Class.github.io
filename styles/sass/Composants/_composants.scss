@@ -1,0 +1,27 @@
+.btn{
+    padding: 0px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+    &__search{
+        > img{
+            max-width: 1.4em;
+            height: auto;
+            background-color: transparent;
+            border: none;
+        }
+    }
+}
+#search_container{
+    position: relative;
+    display : inline-flex;
+    input{
+        float: left;
+    }
+    .btn__search{
+        float: right;
+        transform: translate(-100%, -150%);
+
+    }
+}

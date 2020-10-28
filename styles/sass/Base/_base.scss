@@ -1,18 +1,17 @@
 body{
     font-family: "Cantarell", sans-serif;
-    width: 100%;
-
     #main{
-        height: 100%;
         position: absolute;
-        top: 0PX;
+        top: 0px;
         left: 20%;
         padding-left: 50px;
         padding-right: 50px;
+        height: 100%;
+        #smaller_main{
+        height: 100%;
         }
+    }
 }
-
-
 h2{
     font-weight: 600;
     font-style: bold;
@@ -27,3 +26,4 @@ h4{
 h5{
 
 }
+

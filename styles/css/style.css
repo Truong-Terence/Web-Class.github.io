@@ -3,6 +3,7 @@ body {
   width: 100%;
 }
 body #main {
+
   height: 100%;
   position: absolute;
   top: 0PX;
@@ -21,6 +22,18 @@ h3 {
   font-style: bold;
 }
 
+
+  position: absolute;
+  top: 0px;
+  left: 20%;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100%;
+}
+body #main #smaller_main {
+  height: 100%;
+}
+
 @font-face {
   font-family: "Cantarell";
   src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
@@ -32,6 +45,32 @@ h3 {
   font-family: "Baloo";
   src: url("../fonts/Baloo/Baloo-Regular.ttf");
 }
+.btn {
+  padding: 0px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+}
+.btn__search > img {
+  max-width: 1.4em;
+  height: auto;
+  background-color: transparent;
+  border: none;
+}
+
+#search_container {
+  position: relative;
+  display: inline-flex;
+}
+#search_container input {
+  float: left;
+}
+#search_container .btn__search {
+  float: right;
+  transform: translate(-100%, -150%);
+}
+
 body {
   width: 100%;
 }
@@ -39,10 +78,22 @@ body header {
   display: flex;
   justify-content: space-between;
   position: relative;
+
   left: 0;
   width: 100%;
   height: 90px;
+
+  width: 100%;
+  height: 100px;
+}
+body header #separation_border {
+  z-index: 1;
+  position: absolute;
+  top: -1px;
+
   border-bottom: 2px solid #7451eb;
+  width: 100%;
+  height: 100px;
 }
 body header > a {
   text-decoration: none;
@@ -62,11 +113,13 @@ body header .icons li {
   cursor: pointer;
   margin-right: 25px;
 }
+
 body header .icons > :hover {
   transform: scale(1.1) rotate(360deg);
   transition: cubic-bezier(0.98, 0.05, 0.01, 1.07) 2s;
   filter: invert(100%);
 }
+
 body nav {
   position: absolute;
   top: 0px;
@@ -78,9 +131,15 @@ body nav {
   text-align: center;
   font-size: 18px;
 }
+
 body nav .search-container {
+
+body nav #search_container {
+
   background-color: #7451eb;
   height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #7451eb;
 }
 body nav input {
   float: left;
@@ -91,9 +150,11 @@ body nav input {
   height: 30px;
   cursor: text;
 }
+
 body nav button {
   border-radius: 10px;
 }
+
 body nav h2 {
   color: #7451eb;
   font-style: bold;

@@ -1,29 +1,16 @@
-header{
-    width: auto;
-    font-family: "Cantarell", sans-serif;
-    font-weight: bold;
-}
-
 body{
-    width: auto;
-    height: auto;
-    background-color: $clr_background;
     font-family: "Cantarell", sans-serif;
-    header{
-        // TODO: Twitter Git fb OC
-        
-    }
-    nav ul{
-        width: auto;
-        list-style: none;
-        li a{
-            font-family: "Baloo", "sans-serif";
+    #main{
+        position: absolute;
+        top: 0px;
+        left: 20%;
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 100%;
+        #smaller_main{
+        height: 100%;
         }
     }
 }
 
-@media screen and (max-width: 1280px){
-    #main > .inner{
-        padding: 0 4em 0.1em 4em ;
-    }
-}
+

@@ -1,10 +1,42 @@
+body{
+    width: 100%;
+    header{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 200px;
+        width: 80%;
+        height: 98px;
+        border-bottom: 2px solid $oprcolor;
+        > a {
+            text-decoration: none;
+        }
+        .logo{
+        font-size: 1.2em;
+        margin-bottom: 0;
+            > p > strong{
+            font-size: 1.5em;
+            }
+        }
+        .icons{
+        display: flex;
+        list-style-type: none;
+        cursor: pointer;
+            li{
+            margin-right: 25px;
+            }
+        }
+    }
+}
+
 nav{
     position : absolute;
     z-index: 1;
     top: 0px;
     left: 0;
     height: 100%;
-    width: 33%;
+    width: 20%;
     overflow: auto;
     background-color: $oprcolor2;
     text-align: center;
@@ -23,13 +55,8 @@ nav{
             height: 30px;
             cursor: text;
             }
-            .icon-search{
-            float: left;
+            button{
             border-radius: 10px;
-            padding: 2px;
-            margin: 15px;
-            width: 30px;
-            height: 5px;
             }
             h2{
             color: $oprcolor;
@@ -60,48 +87,4 @@ nav{
                 a:hover{
                 color: $oprhover;
                 }
-}
-
-#wrapper{
-
-}
-#main{
-
-}
-.inner{
-
-}
-#header{
-    display: flex;
-    border-bottom: solid 5px #f56a6a;
-    padding: 6em 0 1em 0;
-}
-
-body{
-    width: auto;
-    header{
-        justify-content: space-between;
-        > a {
-            text-decoration: none;
-        }
-            .logo{
-                font-size: 1.2em;
-                > p > strong{
-                    font-size: 1.5em;
-                }
-            }
-            .icons{
-                display: flex;
-                list-style-type: none;
-                position: relative;
-                bottom: .5em;
-                li{
-                    margin-right: 25px;
-                }
-
-
-
-            }
-    }
-
 }

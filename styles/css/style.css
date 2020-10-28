@@ -6,13 +6,7 @@ header {
 
 body {
   width: auto;
-
   height: auto;
-  background-color: #ffff;
-  font-family: "Cantarell", sans-serif;
-}
-
-
   background-color: #F5F6F7;
   font-family: "Cantarell", sans-serif;
 }
@@ -29,7 +23,6 @@ body nav ul li a {
     padding: 0 4em 0.1em 4em;
   }
 }
-
 @font-face {
   font-family: "Cantarell";
   src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
@@ -41,6 +34,38 @@ body nav ul li a {
   font-family: "Baloo";
   src: url("../fonts/Baloo/Baloo-Regular.ttf");
 }
+body {
+  width: 100%;
+}
+body header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  top: 0;
+  right: 0px;
+  width: 80%;
+  height: 98px;
+  border-bottom: 2px solid #7451eb;
+}
+body header > a {
+  text-decoration: none;
+}
+body header .logo {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+body header .logo > p > strong {
+  font-size: 1.5em;
+}
+body header .icons {
+  display: flex;
+  list-style-type: none;
+  cursor: pointer;
+}
+body header .icons li {
+  margin-right: 25px;
+}
 
 nav {
   position: absolute;
@@ -48,7 +73,7 @@ nav {
   top: 0px;
   left: 0;
   height: 100%;
-  width: 33%;
+  width: 20%;
   overflow: auto;
   background-color: #d5d0f5;
   text-align: center;
@@ -68,13 +93,8 @@ nav input {
   height: 30px;
   cursor: text;
 }
-nav .icon-search {
-  float: left;
+nav button {
   border-radius: 10px;
-  padding: 2px;
-  margin: 15px;
-  width: 30px;
-  height: 5px;
 }
 nav h2 {
   color: #7451eb;
@@ -104,37 +124,6 @@ nav a {
 }
 nav a:hover {
   color: #4d35a3;
-
-#header {
-  display: flex;
-  border-bottom: solid 5px #f56a6a;
-  padding: 6em 0 1em 0;
-}
-
-body {
-  width: auto;
-}
-body header {
-  justify-content: space-between;
-}
-body header > a {
-  text-decoration: none;
-}
-body header .logo {
-  font-size: 1.2em;
-}
-body header .logo > p > strong {
-  font-size: 1.5em;
-}
-body header .icons {
-  display: flex;
-  list-style-type: none;
-  position: relative;
-  bottom: 0.5em;
-}
-body header .icons li {
-  margin-right: 25px;
-
 }
 
 /*# sourceMappingURL=style.css.map */

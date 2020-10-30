@@ -1,15 +1,29 @@
 .btn{
-    padding: 0px;
-    text-align: center;
     display: inline-block;
-    font-size: 1em;
+    text-align: center;
     cursor: pointer;
     &__search{
         > img{
+            font-size: 1em;
+            padding: 0px;
             max-width: 1.4em;
             height: auto;
             background-color: transparent;
-            border: none;
+        }
+    }
+    &__basic{
+        font-size: 0.6em;
+        font-weight: bold;
+        border: 2px solid $oprcolor;
+        padding: 3px 12px 3px 12px;
+        color: $oprcolor;
+        border-radius: 3px;
+        &:hover{
+            transition: all ease-in-out 500ms;
+            transform: scale(1.2);
+            border: $clr_background;
+            background: $oprcolor;
+            color: white;
         }
     }
 }
@@ -25,3 +39,27 @@
 
     }
 }
+
+#hide{
+    cursor: pointer;
+    position: absolute;
+    left: 5px;
+    top: 10px;    
+    border: none;
+    width: 30px;
+    height: 30px;
+    .trait{
+        position: relative;
+        right: 4px;
+        background: $oprcolor;
+        width: 30px;
+        height: 5px;
+        margin: 4px;
+    }
+    &:active{
+        transform: rotate(360deg);
+        transition: 500ms;
+        
+    }
+}
+

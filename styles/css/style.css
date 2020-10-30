@@ -1,51 +1,29 @@
-body {
-  font-family: "Cantarell", sans-serif;
-}
-body #main {
-  position: absolute;
-  top: 0px;
-  left: 20%;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 100%;
-}
-body #main #smaller_main {
-  height: 100%;
-}
-
-h2 {
-  font-weight: 600;
-  font-style: bold;
-}
-
-h3 {
-  font-weight: 400;
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Cantarell";
-  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
-  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
-}
-@font-face {
-  font-family: "Baloo";
-  src: url("../fonts/Baloo/Baloo-Regular.ttf");
-}
 .btn {
-  padding: 0px;
-  text-align: center;
   display: inline-block;
-  font-size: 1em;
+  text-align: center;
   cursor: pointer;
 }
 .btn__search > img {
+  font-size: 1em;
+  padding: 0px;
   max-width: 1.4em;
   height: auto;
   background-color: transparent;
-  border: none;
+}
+.btn__basic {
+  font-size: 0.6em;
+  font-weight: bold;
+  border: 2px solid #7451eb;
+  padding: 3px 12px 3px 12px;
+  color: #7451eb;
+  border-radius: 3px;
+}
+.btn__basic:hover {
+  transition: all ease-in-out 500ms;
+  transform: scale(1.2);
+  border: #F5F6F7;
+  background: #7451eb;
+  color: white;
 }
 
 #search_container {
@@ -60,17 +38,79 @@ h3 {
   transform: translate(-100%, -150%);
 }
 
+#hide {
+  cursor: pointer;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+#hide .trait {
+  position: relative;
+  right: 4px;
+  background: #7451eb;
+  width: 30px;
+  height: 5px;
+  margin: 4px;
+}
+#hide:active {
+  transform: rotate(360deg);
+  transition: 500ms;
+}
+
+body {
+  background: gray;
+  font-family: "Cantarell", sans-serif;
+  width: 100%;
+}
+body nav {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 20%;
+  overflow: auto;
+}
+body #main {
+  position: fixed;
+  height: 100%;
+  width: 80%;
+}
+body #main #smaller_main {
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 100%;
+  width: 60%;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Cantarell";
+  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
+  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
+}
+@font-face {
+  font-family: "Baloo";
+  src: url("../fonts/Baloo/Baloo-Regular.ttf");
+}
 body {
   width: 100%;
 }
 body nav {
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  left: 0;
-  height: 100%;
-  width: 20%;
-  overflow: auto;
   background-color: #d5d0f5;
   text-align: center;
   font-size: 18px;
@@ -118,25 +158,13 @@ body nav a {
   color: #7451eb;
 }
 body nav a:hover {
-  color: #4d35a3;
+  filter: saturate(103%) brightness(58%);
 }
-body #main #smaller_main #hide {
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  cursor: pointer;
-  border: 0px #7451eb solid;
-  border-radius: 10px 100px/120px;
-  width: 30px;
-  height: 30px;
+body #main {
+  background: blue;
 }
-body #main #smaller_main #hide .trait {
-  background: #7451eb;
-  width: 30px;
-  height: 3px;
-  padding: 1px;
-  margin: 4px;
-  align-items: center;
+body #main #smaller_main {
+  background: orange;
 }
 body #main #smaller_main header {
   display: flex;
@@ -144,6 +172,7 @@ body #main #smaller_main header {
   position: relative;
   width: 100%;
   height: 100px;
+  background: transparent;
 }
 body #main #smaller_main header #separation_border {
   z-index: 1;
@@ -178,7 +207,7 @@ body #main #smaller_main header .icons li {
 body #main #smaller_main header .icons > :hover {
   transform: scale(1.1) rotate(360deg);
   transition: cubic-bezier(0.98, 0.05, 0.01, 1.07) 2s;
-  filter: invert(100%);
+  filter: contrast(10) invert(100%) hue-rotate(320deg) saturate(100%) brightness(80%);
 }
 
 /*# sourceMappingURL=style.css.map */

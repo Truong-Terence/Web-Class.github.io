@@ -61,9 +61,10 @@
 }
 
 body {
-  background: gray;
+  background: transparent;
   font-family: "Cantarell", sans-serif;
   width: 100%;
+  margin: 0px;
 }
 body nav {
   position: fixed;
@@ -75,13 +76,16 @@ body nav {
 body #main {
   position: fixed;
   height: 100%;
+  left: 20%;
   width: 80%;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 body #main #smaller_main {
   margin-left: 50px;
   margin-right: 50px;
   height: 100%;
-  width: 60%;
 }
 
 h1 {
@@ -161,10 +165,10 @@ body nav a:hover {
   filter: saturate(103%) brightness(58%);
 }
 body #main {
-  background: blue;
+  background: transparent;
 }
 body #main #smaller_main {
-  background: orange;
+  background: transparent;
 }
 body #main #smaller_main header {
   display: flex;

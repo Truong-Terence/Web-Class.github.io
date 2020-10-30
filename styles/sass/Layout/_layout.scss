@@ -47,14 +47,13 @@ body{
                         color: $oprcolor;
                     }
                     a:hover{
-                        filter: saturate(103%) brightness(58%) //Comme ça tu peux changer la couleur
-                                                                //de oprcolor et pas besoin de oprhover
+                        filter: saturate(103%) brightness(58%);
                     }
     }
     #main{
-        background: blue;
+        background: transparent;
         #smaller_main{
-            background: orange;
+            background: transparent;
             header{
                 display: flex;
                 justify-content: space-between;

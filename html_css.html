@@ -16,7 +16,7 @@
                 <div class="btn btn__search"><img src="img/search.png" alt="image_search_bar"></div>
                 </form>
             </div>
-            <h2>Menu</h2>
+            <h2><a href="index.html">Menu</a></h2>
             <div id="menu_line">
             <ul>
                 <li><a href="découverte métier.html">Découverte métier</a></li>
@@ -34,12 +34,12 @@
              </div>
         </nav>
         <div id="main">
+            <div class="sticky"><div id="hide">
+                <div class="trait"></div>
+                <div class="trait"></div>
+                <div class="trait"></div>
+            </div></div>
             <div id="smaller_main">
-                <div id="hide">
-                    <div class="trait"></div>
-                    <div class="trait"></div>
-                    <div class="trait"></div>
-                </div>
                 <header id="header">
                     <div id="separation_border">
                     <a href="index.html" class="logo"><p></p><strong>WebMastered </strong>by Vittaz & Tété</p></a>
@@ -53,10 +53,77 @@
                 </header>
                 <section>
                     <article>
-                      <h1>LA</h1>
+                        <h1>Le langage du web</h1>
                         <h2>Le HTML</h2>
+                            <dl id="first_padding">
+                                <dt><strong>HTML</strong> Hyper Text Markup Language</dt>
+                                <dd>Langage standard du web. Il fonctionne sur un système de "balises" lui
+                                    permettant une certaine mise en forme et l'insertion d'objets
+                                    (images, vidéos, ...).</dd>
+                                <dt><strong>Balise</strong>
+                                <dd>Les balises indiquent au navigateur comment afficher un objet, un élément en l'encadrant
+                                    ainsi : &ltbalise&gtélément&lt/balise&gt pour les balises fermantes. <br>
+                                    Les balises orphelines quant-à elle appliquent leur effet lorsqu'on les déclare.
+                                    Les navigateurs n'affichent pas les balises.
+                                </dd>
+                                </dt>
+                            </dl>
                             <div class="part_separation">
-                                <div class="under"><h3>Images, Audio et vidéo :</h3></div>
+                            <div class="under"><h3>I - Mettre en valeur</h3></div>
+                                <p>
+                                    Que ce soit un texte, une phrase ou un mot, on peut lui approrter une
+                                    différence de style ou de taille. On les classe dans des catégories qui ont des
+                                    paramètres prédéfinis mais modifiables. <br>
+                                        <ul>
+                                            <li><strong>les titres</strong> sont classifiables de h1 à h6.</li>
+                                            <li><strong>les valeurs</strong> :
+                                                <ul><li><strong>em</strong> (emphasized) pour donner un peu de valeur.</li>
+                                                    <li><strong>strong</strong> pour donner une forte valeur.</li>
+                                                    <li><strong>mark</strong> pour surligner et faire ressortir visuellement.</li></ul></li>
+                                        </ul>
+                                </p>
+                            </div>
+                            <div class="part_separation">
+                            <div class="under"><h3>II - Faire des listes</h3></div>
+                                <p>
+                                    Pour structurer des éléments d'informations, on a le choix entre 2 balises : <br>
+                                    <ul>
+                                        <li><strong>ul</strong> (unordored list).</li>
+                                        <li><strong>ol</strong> (ordored list).</li>
+                                    </ul>
+                                    Le listing s'établie en 3 étapes :
+                                    <ol type="I">
+                                        <li>L'ouverture avec la balise de son choix.</li>
+                                        <li>L'énumération des éléments entre les balises &ltli&gt et &lt/li&gt.</li>
+                                        <li>La fermeture de la balise de liste.</li>
+                                    </ol>
+                                    Un 3ème type de liste existe, on le connait sous le terme "définition". <br>
+                                    On utilise <strong>dl</strong> pour déterminer la liste puis <strong>dt</strong> pour déterminer le terme et enfin <strong>dd</strong> pour la/les définition/s.
+                                </p>
+                            </div>
+                            <div class="part_separation">
+                            <div class="under"><h3> III - Créer des liens</h3></div>
+                                <p>
+                                    Les balises peuvent contenir des attributs dans la balise ouvrante qui permettent une certaine souplesse des balises.
+                                    Pour créer un lien on utilise la balise <strong>a</strong> à laquelle on ajoute l'attribut <strong>href</strong> pour indiquer 
+                                    l'endroit d'atterissage du lien, ainsi : &lta href ="point_de_chute"&gtnom_lien&lt/a&gt.
+                                    <br>Deux types de liens s'offrent à nous :
+                                    <ul>
+                                        <li>Les liens <strong>ablolus</strong> sont des liens existants commet une page html.</li>
+                                        <li>Les liens <strong>relatifs</strong> sont des liens ayants pour point de départ le fichier dans lequel on se trouve.</li>
+                                    </ul>
+                                    Si le fichier à joindre est dans le même dossier, pas de soucis on indique son nom dans <strong>href</strong>. Pour aller dans un
+                                    sous-dossier, il faut alors énumérer les dossiers en les séparant par un /. Et enfin pour 
+                                    remonter dans un dossier parent on tape "..". <br>
+                                    Pour créer une <strong>ancre</strong> on utilisera l'attribut <strong>id</strong> dans la balise ouvrante. 
+                                    Cet <strong>id</strong> que l'on réutilisera dans <strong>href</strong> à l'aide d'un <strong>#ancre</strong>. <br>
+                                    Un lien vers une ancre d'une autre page ? Il suffit d'additionner les deux méthodes en tapant "point_de_chute#ancre" dans <strong>href</strong>.
+                                </p>
+                            </div>
+
+
+                            <div class="part_separation">
+                                <div class="under"><h3>IV - Images, Audio et vidéo :</h3></div>
                                 <h4>Les Images:</h4>
                                     <h5>Les formats:</h5>
                                     <ul>
@@ -124,7 +191,7 @@
                             </ul>
                             </div>
                             <div class="part_separation">
-                                <div class="under"><h3>Les types de balises:</h3></div>
+                                <div class="under"><h3> V - Les types de balises:</h3></div>
                                 <h4>Les balises paires:</h4>
                                 <p>
                                 Elles s'ouvrent, contiennent du texte, et se ferment plus loin. Voici à quoi elles ressemblent :
@@ -567,7 +634,7 @@
                                 </table>
                             </div>
                             <div class="part_separation">
-                            <div class="under"><h3>Les formulaires:</h3></div>
+                            <div class="under"><h3> VI - Les formulaires:</h3></div>
                             <p>Un formulaire est une zone interactive de la page, dans laquelle les visiteurs peuvent saisir des informations.
                             On délimite un formulaire avec la balise <strong>&ltform&gt&ltform&gt</strong>  , à laquelle il faut ajouter deux attributs : <strong>method</strong>  (mode d'envoi des données) et <strong>action</strong>  (page vers laquelle le visiteur sera redirigé après envoi du formulaire, et qui traitera les informations).</p>
                                 <h4>Les éléments des formulaires:</h4>
@@ -608,17 +675,78 @@
                                 rendre un champ obligatoire avec l'attribut <strong>required</strong>, faire en sorte qu'il soit sélectionné par défaut avec <strong>autofocus</strong>, donner une indication dans le champ avec <strong>placeholder</strong>
                                 </p>
                             </div>
-                                <H2>Le CSS</H2>
+                               
+                         <H2>Le CSS</H2>
+                            <dl id="first_padding">
+                                <dt><strong>CSS</strong> Cascading Style Sheets :</dt>
+                                <dd>Langage de stylisation d'un document HTML. Il s'agit d'une liste de règles comportant un ou des 
+                                    selecteurs et un block ou sont déclarées les règles.</dd>
+                                <dt><strong>Sélécteur</strong>
+                                <dd>Les sélecteurs déclarent à quelle partie du balisage un style s'applique.
+                                </dd>
+                                </dt>
+                            </dl>
+                                      
+                                    <!--Lucas--> 
+                                      
+                                      
+                            <div class="part_separation">
+                            <div class="under"><h3>IV - Les alignements</h3></div>
+                                <p>
+                                    À l'instar des logiciels de traitement de texte, la propriété <strong>text-align</strong> comprend 
+                                    les 4 arguments "<strong>left</strong>", "<strong>right</strong>", "<strong>center</strong>", "<strong>justify</strong>". <BR>
+                                    </br>
+                                    Le CSS permet également de faire "flotter" un élément autour d'un texte, c'est un <strong>habillage</strong>. <br>
+                                    Dans le fichier HTML on place l'élément flottant avant le texte puis on utilise la propriété CSS <strong>float</strong> en indiquant 
+                                    l'argument <strong>right</strong> ou <strong>left</strong>. <br>On peut retirer,<strong>clear</strong> le flottant avec les arguments <strong>left</strong>, 
+                                    <strong>right</strong> ou <strong>both</strong>.
+                                </p>
+                            </div>
+                            <div class="part_separation">
+                            <div class="under"><h3>V - Les couleurs !</h3></div>
+                                <p>
+                                    On regroupe les couleurs par type, chacune d'elle peut avoir une signification même si elle peut varier selon les cultures.
+                                    <h4>Les couleurs chaudes :</h4>
+                                        <dl><dt><strong>Rouge</strong> - (couleur primaire)</dt> <dd> Tant associée au feu, à la violence, au danger, à la guerre que l'amour et la passion. <br>
+                                            Dans l'Ouest du Monde elle a un rapport à la chance, la prosperité, le bonheur ou la chance. <br>
+                                            Le reste du Monde peut lui attribuer le deuil ou le marriage. Elle est aussi la couleur de (RED) campaign et du communisme.</dd>
+                                        </dl>
+                                        <dl><dt><strong>Orange</strong> - (couleur secondaire)</dt> <dd> Orange est une couleur liée au dynamisme, la créativité et à l'automne. <br>
+                                        Grâce au fruit du même nom, on peut l'associer à la santé. C'est une couleur friendly.</dd>
+                                        </dl>
+                                        <dl><dt><strong>Jaune</strong> - (couleur primaire)</dt> <dd>Considérée comme la plus lumineuse et énergisante des couleurs grâce à son rapport au Soleil, à l'espoir 
+                                            et au bonheur. Pas aussi puissant que le rouge, on utilise aussi le jaune pour annoncer un danger.<br>
+                                            On peut associer le jaune à la lâcheté et la tromperie. Dans certains pays d'Asie il représente le courage, la couleur marchande ou encore le deuil.</dd>
+                                        </dl>
+                                    <h4>Les couleurs froides :</h4>
+                                        <dl><dt><strong>Vert</strong> - (couleur secondaire)</dt> <dd> .</dd>
+                                        </dl>
+
+
+                                        <div style="color: white; display: inline-block; text-shadow: 1px 1px 1px black;">white</div>, <div style="color: silver; display: inline-block;">silver</div>, <div style="color: gray; display: inline-block;">gray</div>, 
+                                        <div style="color: black; display: inline-block;">black</div>, <div style="color: red; display: inline-block;">red</div>, <div style="color: maroon; display: inline-block;">maroon</div>, 
+                                        <div style="color: lime; display: inline-block;">lime</div>, <div style="color: green; display: inline-block;">green</div>, <div style="color: yellow; display: inline-block;">yellow</div>, 
+                                        <div style="color: olive; display: inline-block;">olive</div>, <div style="color: blue; display: inline-block;">blue</div>, <div style="color: navy; display: inline-block;">navy</div>, 
+                                        <div style="color: fuchsia; display: inline-block;">fuchsia</div>, <div style="color: purple; display: inline-block;">purple</div>, <div style="color: aqua; display: inline-block;">aqua</div>, 
+                                        <div style="color: teal; display: inline-block;">teal</div> sont les 16 couleurs standards. <br>
+
+
+                                    </div>
+                                </p>
+                            </div>
                         <!--TODO:Les intégrations du CSS > L
                             TODO:la sélection des balises > L
                             TODO:class et id > L
                             TODO:balises et sélecteurs > L
                             TODO:formatage du texte > L
                             TODO:police, font style, déoration > L
+                            TODO:alignement, flottant > T
+                            TODO:couleurs et image de fond > T
+                            TODO:bordures et ombres > T
+                            TODO:les dimmensions des blocks > T
+                            TODO:flexbox > T
 
                         -->
-                        <h3>Les intégrations du CSS:</h3>
-
                     </article>
                 </section>
             </div>

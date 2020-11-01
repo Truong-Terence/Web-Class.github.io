@@ -55,31 +55,570 @@
                     <article>
                       <h1>LA</h1>
                         <h2>Le HTML</h2>
-                        <!--TODO: titres > T
-                            TODO:les 3 mises en valeur > T
-                            TODO:les 2 types de liste > T
-                            TODO:les liens > T
-                            TODO:les images+audio+vidéo > L
-                            TODO:la structuration > L
-                            TODO:les types de balise > L
-                            TODO:les formulaires > L
-                        -->
-                            <p>Le HTML - Hyper Text Markup Language - 
+                            <div class="part_separation">
+                                <div class="under"><h3>Images, Audio et vidéo :</h3></div>
+                                <h4>Les Images:</h4>
+                                    <h5>Les formats:</h5>
+                                    <ul>
+                                        <li>JPEG : pour les photos ;</li>
+                                        <li>PNG : pour toutes les autres illustrations ;</li>
+                                        <li>GIF : similaire au PNG, plus limité en nombre de couleurs mais qui peut être animé.</li>
+                                    </ul>
+                                    <h5>Insérer une image:</h5>
+                                    <p>
+                                    pour insérer une image il faut utiliser la balise orpheline <strong>&ltimg src="" alt=""&gt</strong>
+                                    <strong>Important</strong> : Une image insérée dans du HTML doit toujours etre comprise dans une balise P.
+                                    <strong>Important</strong> : alt  : cela signifie « texte alternatif ». On doit toujours indiquer un texte alternatif à l'image, c'est-à-dire un court texte qui décrit ce que contient l'image. Ce texte sera affiché à la place de l'image si celle-ci ne peut pas être téléchargée, ou dans les navigateurs de personnes handicapées (non-voyants) qui ne peuvent malheureusement pas « voir » l'image. Cela aide aussi les robots des moteurs de recherche pour les recherches d'images.
+                                    Pour afficher une info-bulle il faut rajouter l'attribut <strong>title=""</strong
+                                    </p>
+                                    <h5>Les figures:</h5>
+                                    <p>
+                                    Si une image illustre le texte (et n'est pas seulement décorative), il est conseillé de la placer au sein d'une balise  <figure>  . La balise  <figcaption>  permet d'écrire la légende de l'image.
+                                    </p>
+                                <h4>l'Audio:</h4>
+                                <p>
+                                La balise <strong>&ltaudio src=""&gt&lt/audio&gt</strong> permet uniquement de télécharger le contenu audio
+                                il faut compléter la balise par les attributs ci-dessous :</p>
+                                <ul>
+                                    <li><strong>Controls</strong>: Pour ajouter les boutons play/pause et la barre de défilement</li>
+                                    <li><strong>Witdh</strong>: Podifier la largueur de la barre</li>
+                                    <li><strong>Loop</strong>: Boucle audio</li>
+                                    <li><strong>Autoplay</strong>: Lecture dès le lancement de la page</li>
+                                    <li><strong>Preload</strong>:indique si la musique peut être préchargée dès le chargement de la page ou non. Cet attribut peut prendre les valeurs :
+                                    <strong>auto</strong>(par défaut) : le navigateur décide s'il doit précharger toute la musique, uniquement les métadonnées ou rien du tout,
+                                    <strong>metadata</strong>: charge uniquement les métadonnées (durée, etc.),
+                                    <strong>none</strong>: pas de préchargement. Utile si vous ne voulez pas gaspiller de bande passante sur votre site.</li>
+                                </ul>
+                                <p> jamais le navigateur ne reconnais pas le format du fichier il faut utiliser la balise comme ci-dessous : 
+                                &ltaudio controls&gt
+                                &ltsource src=""&gt
+                                &lt/audio&gt
+                                </p>
+                                <h4>Les Vidéo:</h4>
+                                <p>Pour insérer une video, il suffit d'utiliser la balise <strong>&ltvideo src=""&gt&lt/video&gt</strong>
+                                il faut impérativement rajouter les attributs comme pour l'audio.</p>
+                                <ul>
+                                    <li><strong>Poster</strong>:Image à afficher à la place de la vidéo avan sont lancement.</li>
+                                    <li><strong>Controls</strong>: Pour ajouter les boutons play/pause et la barre de défilement</li>
+                                    <li><strong>Witdh</strong>: Podifier la largueur de la barre</li>
+                                    <li><strong>Loop</strong>: Boucle vidéo</li>
+                                    <li><strong>Autoplay</strong>: Lecture dès le lancement de la page</li>
+                                    <li><strong>Preload</strong>:indique si la vidéo peut être préchargée dès le chargement de la page ou non. Cet attribut peut prendre les valeurs :
+                                    <strong>auto</strong>(par défaut) : le navigateur décide s'il doit précharger toute la vidéo, uniquement les métadonnées ou rien du tout,
+                                    <strong>metadata</strong>: charge uniquement les métadonnées (durée, etc.),
+                                    <strong>none</strong>: pas de préchargement. Utile si vous ne voulez pas gaspiller de bande passante sur votre site.</li>
+                                </ul>
+                            </div>
+                            <div class="part_separation">
+                            <div class="under"><h3>La structuration:</h3></div>
+                            <p>En général, une page web est constituée d'un en-tête (tout en haut), de menus de navigation (en haut ou sur les côtés), de différentes sections au centre… et d'un pied de page (tout en bas).
+                            <img src="img/structure.png" alt="structure d'un site" title="structure basique">
                             </p>
-                        <H2>Le CSS</H2>
+                            <ul>
+                                <li><strong>Header</strong>: On y trouve le plus souvent un logo, une bannière, le slogan de votre site</li>
+                                <li><strong>Nav</strong>: doit regrouper tous les principaux liens de navigation du site.</li>
+                                <li><strong>Section</strong>: sert à regrouper des contenus en fonction de leur thématique. Elle englobe généralement une portion du contenu au centre de la page.</li>
+                                <li><strong>Article</strong>: sert à englober une portion généralement autonome de la page. C'est une partie de la page qui pourrait ainsi être reprise sur un autre site.</li>
+                                <li><strong>Aside</strong>: conçue pour contenir des informations complémentaires au document que l'on visualise. Ces informations sont généralement placées sur le côté (bien que ce ne soit pas une obligation).</li>
+                                <li><strong>Footer</strong>: se trouve en général tout en bas du document. On y trouve des informations comme des liens de contact, le nom de l'auteur, les mentions légales, etc.</li>
+                            </ul>
+                            </div>
+                            <div class="part_separation">
+                                <div class="under"><h3>Les types de balises:</h3></div>
+                                <h4>Les balises paires:</h4>
+                                <p>
+                                Elles s'ouvrent, contiennent du texte, et se ferment plus loin. Voici à quoi elles ressemblent :
+                                <strong>&lttitre&gtvotretexte&lt/titre&gt</strong>
+                                On distingue une balise ouvrante &lttitre&gt et une balise fermante &lt/titre&gt qui indique que le titre se termine. Cela signifie pour l'ordinateur que tout ce qui n'est pas entre ces deux balises… n'est pas un titre.
+                                Ceci n'est pas un titre &lttitre&gtCeci est un titre&lt/titre&gt Ceci n'est pas un titre</p>
+                                <h4>Les balises orphelines:</h4>
+                                <p>
+                                Ce sont des balises qui servent le plus souvent à insérer un élément à un endroit précis (par exemple une image). Il n'est pas nécessaire de délimiter le début et la fin de l'image, on veut juste dire à l'ordinateur « Insère une image ici ».
+                                Une balise orpheline s'écrit comme ceci :<strong>&ltimage /&gt</strong>
+                                </p>
+                                <h4>Les attributs:</h4>
+                                <p>attributs sont un peu les options des balises. Ils viennent les compléter pour donner des informations supplémentaires. L'attribut se place après le nom de la balise ouvrante et a le plus souvent une valeur, comme ceci :
+                                <strong>&ltbalise attribut="valeur"&gt</strong>
+                                </p>
+                                <h4>Liste des balises Html :</h4>
+                                <table>
+                                    <thead>
+                                        <th>Balise</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>&lt!– … –&gt</td>
+                                            <td>Définit un commentaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lt!DOCTYPE&gt</td>
+                                            <td>Définit le type du document</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lta&gt&lt/a&gt</td>
+                                            <td>Définit un lien</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltabbr&gt&lt/abbr&gt</td>
+                                            <td>Définit une abréviation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltaddress&gt&lt/address&gt</td>
+                                            <td>Définit une adresse</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltarea&gt</td>
+                                            <td>Définit une zone à l’intérieur d’une image</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltarticle&gt&lt/article&gt</td>
+                                            <td>Définit un article</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltaside&gt&lt/aside&gt</td>
+                                            <td>Définit une partie latérale au contenu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltaudio&gt&lt/audio&gt</td>
+                                            <td>Définit un fichier audio</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltb&gt&lt/b&gt</td>
+                                            <td>Texte en gras</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltbase&gt</td>
+                                            <td>Définit une URL de base pour tous les liens de la page</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltbdo&gt&lt/bdo&gt</td>
+                                            <td>Définit la direction du texte</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltblockquote&gt&lt/blockquote&gt</td>
+                                            <td>Définit une longue citation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltbody&gt&lt/body&gt</td>
+                                            <td>Définit le corps de la page</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltbr&gt</td>
+                                            <td>Saut de ligne</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltbutton&gt&lt/button&gt</td>
+                                            <td>Définit un bouton cliquable</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcanvas&gt&lt/canvas&gt</td>
+                                            <td>Définit un graphique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcaption&gt&lt/caption&gt</td>
+                                            <td>Légende du tableau</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcite&gt&lt/cite&gt</td>
+                                            <td>Définit une citation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcode&gt&lt/code&gt</td>
+                                            <td>Mise en forme d’un texte en code informatique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcol&gt</td>
+                                            <td>Définit une colonne d’un tableau</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcolgroup&gt&lt/colgroup&gt</td>
+                                            <td>Définit un groupe de colonne pour un tableau</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltcommand&gt&lt/command&gt</td>
+                                            <td>Définit un bouton de commande</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdatalist&gt&lt/datalist&gt</td>
+                                            <td>Définit une liste d’options</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdd&gt&lt/dd&gt</td>
+                                            <td>Définition d’un terme</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdel&gt&lt/del&gt</td>
+                                            <td>Définit un texte supprimé</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdetails&gt&lt/details&gt</td>
+                                            <td>Définit les détails d’un élément</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdfn&gt&lt/dfn&gt</td>
+                                            <td>Définition</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdiv&gt&lt/div&gt</td>
+                                            <td>Définit un calque ou une section</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdl&gt&lt/dl&gt</td>
+                                            <td>Liste de définition</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltdt&gt&lt/dt&gt</td>
+                                            <td>Définition d’un terme</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltem&gt&lt/em&gt</td>
+                                            <td>Mise en exergue d’un texte – italique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltembed src="" type=""&gt</td>
+                                            <td>Définit un contenu extérieur (audio, vidéo …)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><&ltieldset&gt&lt/fieldset&gt</td>
+                                            <td>Regroupe plusieurs éléments d’un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltfigcaption&gt&lt/figcaption&gt</td>
+                                            <td>Légende d’un groupe d’élément multimédia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltfigure&gt&lt/figure&gt</td>
+                                            <td>Définit un groupe d’élément multimédia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltfooter&gt&lt/footer&gt</td>
+                                            <td>Pied de page</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltform action=""&gt&lt/form&gt</td>
+                                            <td>Définit un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lth1&gt&lt/h1&gt</td>
+                                            <td>Définit un titre par degré importance de 1 à 6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lthead&gt&lt/head&gt</td>
+                                            <td>Définit l’en-tête d’un document</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltheader&gt&lt/header&gt</td>
+                                            <td>Définit le haut d’une section ou d’une page</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lthgroup&gt&lt/hgroup&gt</td>
+                                            <td>Regroupe les informations du haut d’une page ou section</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lthr&gt</td>
+                                            <td>Barre horizontale</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lthtml&gt&lt/html&gt</td>
+                                            <td>Définit un document html</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&lti&gt&lt/i&gt</td>
+                                            <td>Texte en italique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltiframe src="" frameborder="0"&gt&lt/iframe&gt</td>
+                                            <td>Introduit un page html dans une frame</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltimg src="" alt=""&gt</td>
+                                            <td>Définit une image</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltinput type="text"&gt</td>
+                                            <td>Définit un champ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltins&gt&lt/ins&gt</td>
+                                            <td>Définit un texte insérer</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltkeygen&gt</td>
+                                            <td>Générateur de clé pour un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltkbd&gt&lt/kbd&gt</td>
+                                            <td>Raccourcis ou touche du clavier</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltlabel for=""&gt&lt/label&gt</td>
+                                            <td>Légende d’un groupe d’élément de formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltlegend&gt&lt/legend&gt</td>
+                                            <td>Titre d’un groupe d’élément d’un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltli&gt&lt/li&gt</td>
+                                            <td>Élément d’une liste</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltlink rel="stylesheet" href=""&gt</td>
+                                            <td>Définit les relations entre les documents</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmap name=""&gt&lt/map&gt</td>
+                                            <td>Définit une carte</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmark&gt&lt/mark&gt</td>
+                                            <td>Mise en valeur d’un mot ou d’un texte – Texte marqué</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmath&gt&lt/math&gt</td>
+                                            <td>Définit une formule mathématique</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmenu&gt&lt/menu&gt</td>
+                                            <td>Définit un menu en liste</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmeta&gt</td>
+                                            <td>Définit des informations relatives au document</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltmeter&gt&lt/meter&gt</td>
+                                            <td>Définit une unité de mesure</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltnav&gt&lt/nav&gt</td>
+                                            <td>Définit un groupe de liens de navigation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltnoscript&gt&lt/noscript&gt</td>
+                                            <td>Définit une alternative au script non supporté</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltobject data="" type=""&gt&lt/object&gt</td>
+                                            <td>Définit un objet du contenu extérieur multimédia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltol&gt&lt/ol&gt</td>
+                                            <td>Définit une liste ordonné</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltoptgroup&gt&lt/optgroup&gt</td>
+                                            <td>Regroupe d’une liste d »option dans un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltoption value=""&gt&lt/option&gt</td>
+                                            <td>Option d’une liste dans un formulaire</td>
+                                        </tr>
+                                        <tr>
+                                           <td>&ltoutput&gt&lt/output&gt</td>
+                                           <td>Définit un type de sortie</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>&ltp&gt</td>
+                                            <td>Définit un paragraphe</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltparam&gt</td>
+                                            <td>Définit les paramètres d’un objet</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltpre&gt&lt/pre&gt</td>
+                                            <td>Texte pré-formaté</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltprogress&gt&lt/progress&gt</td>
+                                            <td>Définit une progression</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltq&gt&lt/q&gt</td>
+                                            <td>Définit une courte citation</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltrp&gt&lt/rp&gt</td>
+                                            <td>Annotation ruby si le script n’est pas supporté</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltrt&gt&lt/rt&gt</td>
+                                            <td>Annotation ruby d’explication</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltruby&gt&lt/ruby&gt</td>
+                                            <td>Définit une annotation en ruby</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsamp&gt&lt/samp&gt</td>
+                                            <td>Définit un échantillon de code</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltscript&gt&lt/script&gt</td>
+                                            <td>Définit un script</td>                                                                              
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsection&gt&lt/section&gt</td>
+                                            <td>Définit une section</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltselect&gt&lt/select&gt</td>
+                                            <td>Définit une liste sélectionnable</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsmall&gt&lt/small&gt</td>
+                                            <td>Minimise l’importance d’un texte</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsource&gt</td>
+                                            <td>Définit la source d’un contenu multimédia</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltspan&gt&lt/span&gt</td>
+                                            <td>Définit une section de type inline</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltstrong&gt&lt/strong&gt</td>
+                                            <td>Mise en exergue d’un texte – Texte en Gras</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltstyle&gt&lt/style&gt</td>
+                                            <td>Définit un style CSS</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsub&gt&lt/sub&gt</td>
+                                            <td>Mise en indice d’un texte</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsummary&gt&lt/summary&gt</td>
+                                            <td>Définit l’en-tête des détails d’un document ou section</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsup&gt&lt/sup&gt</td>
+                                            <td>Mise en exposant d’un texte</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltsvg&gt&lt/svg&gt</td>
+                                            <td>Définit une image vectorielle</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttable&gt&lt/table&gt</td>
+                                            <td>Définit un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttbody&gt&lt/tbody&gt</td>
+                                            <td>Définit le corps d’un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttd&gt&lt/td&gt</td>
+                                            <td>Définit une cellule d’un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttextarea name="" id="" cols="30" rows="10"&gt&lt/textarea&gt</td>
+                                            <td>Définit une zone de texte</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttfoot&gt&lt/tfoot&gt</td>
+                                            <td>Définit le bas d’un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltth&gt&lt/th&gt</td>
+                                            <td>Définit une cellule d’en-tête d’un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltthead&gt&lt/thead&gt</td>
+                                            <td>Définit le haut d’un tableau</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttime&gt&lt/time&gt</td>
+                                            <td>Définit une unité de temps</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttitle&gt&lt/title&gt</td>
+                                            <td>Définit le titre d’un document</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&lttr&gt&lt/tr&gt</td>
+                                            <td>Définit une ligne de tableau</td>                                                                               
+                                         </tr>
+                                         <tr>
+                                            <td>&lttrack&gt</td>
+                                            <td>Définit une unité de temps pour les éléments &ltaudio&gt et &ltvideo&gt.</td>                                        
+                                         </tr>
+                                         <tr>
+                                            <td>&ltul&gt&lt/ul&gt</td>
+                                            <td>Définit une liste non-ordonné</td>                                        
+                                         </tr>
+                                         <tr>
+                                             <td>&ltvar&gt&lt/var&gt</td>
+                                             <td>Définit une variable</td>
+                                         </tr>
+                                         <tr>
+                                            <td>&ltvideo src=""&gt&lt/video&gt</td>
+                                            <td>Définit une vidéo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&ltwbr&gt</td>
+                                            <td>Définit un possible retour à la ligne</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="part_separation">
+                            <div class="under"><h3>Les formulaires:</h3></div>
+                            <p>Un formulaire est une zone interactive de la page, dans laquelle les visiteurs peuvent saisir des informations.
+                            On délimite un formulaire avec la balise <strong>&ltform&gt&ltform&gt</strong>  , à laquelle il faut ajouter deux attributs : <strong>method</strong>  (mode d'envoi des données) et <strong>action</strong>  (page vers laquelle le visiteur sera redirigé après envoi du formulaire, et qui traitera les informations).</p>
+                                <h4>Les éléments des formulaires:</h4>
+                                <p>
+                                Les éléments des formulaires doivent etre insérés dans la balise <strong>&ltinput&gt</strong>
+                                La valeur de son attribut <strong>type</strong> permet d'indiquer quel type de champ doit être inséré :
+                                </p>
+                                <ul>
+                                    <li><strong>Text</strong>: zone de texte</li>
+                                    <li><strong>Password</strong>: zone de texte pour mot de passe</li>
+                                    <li><strong>Hidden</strong>: champ caché</li>
+                                    <li><strong>Tel</strong>: numéro de téléphone</li>
+                                    <li><strong>Checkbox</strong>: case à cocher</li>
+                                    <li><strong>Radio</strong>:bouton radio (un seul choix)</li>
+                                    <li><strong>Button</strong>: bouton</li>
+                                    <li><strong>Reset</strong>: Remise à zero du formulaire</li>
+                                    <li><strong>Image</strong>: image cliquable</li>
+                                    <li><strong>File</strong>: fichier</li>
+                                    <li><strong>Email</strong>: adresse mail</li>
+                                    <li><strong>Url</strong>: adresse URL/URI</li>
+                                    <li><strong>Search</strong>: champ de recherche</li>
+                                    <li><strong>Date</strong>: date</li>
+                                    <li><strong>Time</strong>: heure</li>
+                                    <li><strong>Datetime-local</strong>: date et heure</li>
+                                    <li><strong>Month</strong>: Mois</li>
+                                    <li><strong>Week</strong>: Semaine</li>
+                                    <li><strong>Number</strong>: valeur numérique </li>
+                                    <li><strong>Range</strong>: valeur numérique d'un intervalle</li>
+                                    <li><strong>Color</strong>: une couleur RVB</li>
+                                </ul>
+                                <H4>Label:</H4>
+                                <p>La balise <strong>&ltlabel&gt</strong>  permet d'écrire un libellé. On l'associe à un champ de formulaire avec l'attribut <strong>for=""</strong>, qui doit avoir la même valeur que l' id  du champ de formulaire.
+                                &ltlabel for="pseudo"&gtVotre pseudo :&lt/label&gt
+                                &ltinput type="text" name="pseudo" id="pseudo" /&gt
+                                </p>
+                                <h4>Les attributs:</h4>
+                                <p>Pour faciliter la vie de l'utilisateur nous pouvons :
+                                rendre un champ obligatoire avec l'attribut <strong>required</strong>, faire en sorte qu'il soit sélectionné par défaut avec <strong>autofocus</strong>, donner une indication dans le champ avec <strong>placeholder</strong>
+                                </p>
+                            </div>
+                                <H2>Le CSS</H2>
                         <!--TODO:Les intégrations du CSS > L
                             TODO:la sélection des balises > L
                             TODO:class et id > L
                             TODO:balises et sélecteurs > L
                             TODO:formatage du texte > L
                             TODO:police, font style, déoration > L
-                            TODO:alignement, flottant > T
-                            TODO:couleurs et image de fond > T
-                            TODO:bordures et ombres > T
-                            TODO:les dimmensions des blocks > T
-                            TODO:flexbox > T
+
                         -->
-                            <p></p>
+                        <h3>Les intégrations du CSS:</h3>
+
                     </article>
                 </section>
             </div>

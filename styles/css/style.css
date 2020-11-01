@@ -100,6 +100,12 @@ h3 {
   font-weight: 400;
 }
 
+.banniere {
+  background: url("../../../img/banniere2.jpeg") no-repeat;
+  height: 200px;
+  position: relative;
+}
+
 @font-face {
   font-family: "Cantarell";
   src: url("../fonts/Cantarell/Cantarell-Bold.ttf");

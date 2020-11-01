@@ -177,6 +177,25 @@ h3 {
   padding-top: 0.2em;
 }
 
+
+.banniere {
+  background: url("../../../img/banniere2.jpeg") no-repeat;
+  height: 200px;
+  position: relative;
+}
+
+@font-face {
+  font-family: "Cantarell";
+  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
+  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
+}
+@font-face {
+  font-family: "Baloo";
+  src: url("../fonts/Baloo/Baloo-Regular.ttf");
+}
+
 body {
   width: 100%;
 }

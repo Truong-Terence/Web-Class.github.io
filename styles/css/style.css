@@ -1,3 +1,45 @@
+@font-face {
+  font-family: "Cantarell";
+  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
+  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
+  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
+}
+@font-face {
+  font-family: "Baloo";
+  src: url("../fonts/Baloo/Baloo-Regular.ttf");
+}
+@font-face {
+  font-family: "Kaushan";
+  src: url("../fonts/Kaushan/KaushanScript-Regular.otf");
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("../fonts/Playfair/PlayfairDisplay-Black.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-BlackItalic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Bold.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Bold-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Regular.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Black.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-BlackItalic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Bold.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Bold-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Regular.otf");
+}
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("../fonts/LeagueSpartan/LeagueSpartan-Bold.otf");
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("../fonts/Pacifico/Pacifico.ttf");
+}
+@font-face {
+  font-family: "Shlop";
+  src: url("../fonts/Shlop/SHLOP.ttf");
+}
 .btn {
   display: inline-block;
   text-align: center;
@@ -38,10 +80,16 @@
   transform: translate(-100%, -150%);
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 #hide {
   cursor: pointer;
   position: absolute;
-  left: 5px;
+  left: 10px;
   top: 10px;
   border: none;
   width: 30px;
@@ -58,6 +106,16 @@
 #hide:active {
   transform: rotate(360deg);
   transition: 500ms;
+}
+
+.under {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 3px solid #7451eb;
+  padding: 0px 20px 0px 0px;
+  color: #7451eb;
+  width: auto;
 }
 
 body {
@@ -88,29 +146,37 @@ body #main #smaller_main {
   height: 100%;
 }
 
+#first_padding {
+  padding-bottom: 2em;
+}
+
+.part_separation {
+  padding-bottom: 2em;
+  border-top: 2px solid #E9E9E9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "LeagueSpartan";
+}
+
 h1 {
   font-weight: 800;
+  font-size: 1.5em;
 }
 
 h2 {
   font-weight: 600;
+  font-size: 1.2em;
 }
 
 h3 {
   font-weight: 400;
+  font-size: 0.9em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  padding-top: 0.2em;
 }
 
-@font-face {
-  font-family: "Cantarell";
-  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
-  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
-}
-@font-face {
-  font-family: "Baloo";
-  src: url("../fonts/Baloo/Baloo-Regular.ttf");
-}
 body {
   width: 100%;
 }
@@ -176,7 +242,7 @@ body #main #smaller_main header {
   position: relative;
   width: 100%;
   height: 100px;
-  background: transparent;
+  background: url("../../../img/banniere2.jpeg");
 }
 body #main #smaller_main header #separation_border {
   z-index: 1;
@@ -187,7 +253,14 @@ body #main #smaller_main header #separation_border {
   height: 100px;
 }
 body #main #smaller_main header #separation_border > a {
+  margin-left: 5px;
   text-decoration: none;
+  font-family: "Playfair", sans-serif;
+  color: white;
+}
+body #main #smaller_main header #separation_border > a:visited {
+  text-decoration: none;
+  color: white;
 }
 body #main #smaller_main header .logo {
   font-size: 1.2em;

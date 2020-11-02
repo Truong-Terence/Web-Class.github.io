@@ -688,10 +688,153 @@
                             </dl>
                                       
                                     <!--Lucas--> 
-                                      
-                                      
                             <div class="part_separation">
-                            <div class="under"><h3>IV - Les alignements</h3></div>
+                            <div class="under"><h3>I - Les intégrations du CSS</h3></div>
+                                <p> Le CSS peut-etre écrit a trois endroit différents : </p>
+                                    <ul>
+                                        <li>dans un fichier .css  (méthode la plus recommandée) ;</li>
+                                        <li>dans l'en-tête <strong>&lthead&gt</strong> du fichier HTML ;</li>
+                                        <li>directement dans les balises du fichier HTML via un attribut <strong>style</strong>  (méthode la moins recommandée).</li>
+                                    </ul>
+                                <h4>Dans un fichier .CSS:</h4>
+                                <p>
+                                    Il faut d'abord crée son  fichier .css et le relier au fichier .hmtl grace à la balise que l'on doit placer dans le <strong>&ltHead&gt&lt/Head&gt</strong><br> 
+                                    &ltlink type="text/css" rel="stylesheet" href="styles/css/style.css"&gt
+                                </p>
+                                <h4>Dans l'en-tête du HTML:</h4>
+                                <P>
+                                    Il suffit d'inscrire les regles CSS dans un balise <strong>&ltstyle&gt</strong> placée dans le &lthead&gt.<br>
+                                    Cette méthode n'est pas conseillée.
+                                </P>
+                                <h4>Directement dans les balises (fortement non recommandé):</h4>
+                                <p>
+                                    Ajouter un attribut style  à n'importe quelle balise. Vous insérerez votre code CSS directement dans cet attribut
+                                    <strong>&ltp style="color: blue;"&gtBonjour et bienvenue sur mon site !&lt/p&gt</strong>
+                                </p>
+                            
+                            <div class="part_separation">
+                            <div class="under"><h3>II - la sélection des balises:</h3></div>
+                            <h4>Les sélecteurs de balise:</h4>
+                            <p>
+                            Ce sélecteur simple permet de cibler les éléments qui correspondent au nom indiqué.<br>
+                            Syntaxe : nom_element<br>
+                            Exemple : input permettra de cibler n'importe quel élément &ltinput&gt.
+                            </p>
+                            <h4>Les sélecteurs de classe:</h4>
+                            <p> sélecteur simple permet de cibler les éléments en fonction de la valeur de leur attribut class.<br>
+                            Syntaxe : .nomclasse<br>
+                            Exemple : .index permettra de cibler n'importe quel élément qui possède la classe index (définie avec un attribut class="index").
+                            </p>
+                            <h4>Les sélecteurs d'identifiant:</h4>
+                            <p>
+                            Ce sélecteur simple permet de cibler un élément d'un document en fonction de la valeur de son attribut id. Dans un document, il ne doit y avoir qu'un seul élément pour un identifiant donné.<br>
+                            Syntaxe : #valeurid<br>
+                            Exemple : #toc permettra de cibler l'élément qui possède l'identifiant toc (vraisemblablement défini avec un attribut id="toc").
+                            </p>
+                            <h4>Le sélecteur universel:</h4>
+                            <p>
+                            Ce sélecteur permet de cibler tous les nœuds d'un document. Il existe également une variante pour ne cibler qu'un seul espace de noms et une variante pour cibler tous les espaces de noms.<br>
+                            Syntaxe : * ns|* *|*<br>
+                            Exemple : * permettra de cibler tous les éléments du document.
+                            </p>
+                            <h4>Les sélecteurs d'attribut:</h4>
+                            <p>
+                            Ce sélecteur simple permet de cibler des éléments d'un document en fonction de la valeur d'un de leurs attributs.<br>
+                            Syntaxe : [attr] [attr=valeur] [attr~=valeur] [attr|=valeur] [attr^=valeur] [attr$=valeur] [attr*=valeur]<br>
+                            Exemple : [autoplay] permettra de cibler tous les éléments qui possède l'attribut autoplay défini (quelle que soit sa valeur).
+                            </p>
+
+                            <div class="part_separation">
+                            <div class="under"><h3>III - Les Class et ID:</h3></div>
+                                <p>Comment faire pour que certains paragraphes seulement soient écrits d'une manière différente ? On pourrait placer le code CSS dans un attribut style  sur la balise que l'on vise mais ce n'est pas recommandé (il vaut mieux utiliser un fichier CSS externe).
+                                    Pour résoudre le problème, on peut utiliser ces attributs spéciaux qui fonctionnent sur toutes les balises : </p>
+                                    <ul>
+                                        <li>Les Class <strong>Class=""</strong></li>
+                                        <li>les ID <strong>Id=""</strong></li>
+                                    </ul>
+                                <h4>Les Class:</h4>
+                                <p>
+                                Les Class permettent de cibler plusieurs balises du code html.<br>
+                                Il suffit de les intérgrer au code HTML grace à l'attribut <strong>class=".nomclasse"</strong><br>
+                                Par la suite il faudra cibler l'attribut class dans le fichier html en utilisant le sélécteur de classe <strong>.nomclasse</strong> 
+                                </p>
+                                <h4>Les ID:</h4>
+                                <p>
+                                Les ID reprennent le même principe que les class, SAUF que celles-ci sont utilisable qu'une seule fois dans le code.<br> 
+                                <strong>id="nomid"</strong><br>
+                                Pour cibler une ID dans le CSS il faut utiliser le selecteur <strong>#nomid</strong>
+                                </p>
+                            <div class="part_separation">
+                            <div class="under"><h3>IV - Formatage du texte :</h3></div>
+                            <H4>La taille :</H4>
+                            <p>
+                                Pour modifier la taille du texte, on utilise la propriété CSS <strong>font-size</strong> Il y a plusieurs techniques:<br><br>
+                                -indiquer une taille <strong>absolue</strong> : en pixels, en centimètres ou millimètres. Cette méthode est très précise, mais il est conseillé de ne l'utiliser que si c'est absolument nécessaire, car on risque d'indiquer une taille trop petite pour certains lecteurs :<br>
+                                Pour indiquer une taille absolue, on utilise généralement les pixels. Pour avoir un texte de 16 pixels de hauteur, il faut écrire :
+                                <strong>font-size: 16px;</strong><br>
+                                <br>
+                                -indiquer une taille <strong>relative</strong> : en pourcentage, « em » ou « ex », cette technique a l'avantage d'être plus souple. Elle s'adapte plus facilement aux préférences de taille des visiteurs.<br>
+                                Il y a plusieurs moyens d'indiquer une valeur relative. Par exemple écrire la taille avec des mots en anglais comme ceux-ci :
+                                <ul>
+                                    <li><strong>xx-small</strong>  : minuscule ;</li>
+                                    <li><strong>x-small</strong>  : très petit ;</li>
+                                    <li><strong>small</strong>  : petit ;</li>
+                                    <li><strong>medium</strong> : moyen ;</li>
+                                    <li><strong>large</strong>  : grand ;</li>
+                                    <li><strong>x-large</strong>  : très grand ;</li>
+                                    <li><strong>xx-large</strong>  : gigantesque.</li>
+                                </ul>
+                            -Il est aussi possible de définir la taille d'un texte en <strong>"EM"</strong>.<br>
+                            <ul>
+                                <li><strong>1em</strong>: le texte a une taille normale;</li>
+                                <li><strong>1.3em</strong>: Pour grossir le texte, inscrire une valeur supérieure à 1;</li>
+                                <li><strong>0.8em</strong>: Pour réduire le texte, inscrire une valeur inférieure à 1;</li>
+                            </ul>
+                            -En pourcentage <strong>font-size : 8%</strong><br>
+                            -En <strong>EX</strong>, plus petit que EM.
+                            </p>
+                            <H4>La police:</H4>
+                            <p>La Police utilisée par defaut par les navigateur est la sans-serif.<br>
+                            Pour ajouter une police, il faut suivre la procédure ci-dessous:<br>
+                            <strong>@font-face {<br>
+                                font-family: 'Police-name';<br>
+                                src: url('police-name.eot');<br>
+                            }</strong><br>
+                            On pourra par la suite définir la police d'un élement, par exemple d'une section<br>
+                            <strong>section {<br>
+                            font-family : 'police-name.eot'<br>
+                            }</strong><br>
+                            -Les différents formats de polices:
+                            <ul>
+                                <li><strong>.TTF</strong>: TrueType Font. Fonctionne sur IE9 et tous les autres navigateurs </li>
+                                <li><strong>.EOT</strong>: Embedded OpenType. Fonctionne sur Internet Explorer uniquement, toutes versions.</li>
+                                <li><strong>.OTF</strong>: OpenType Font. Ne fonctionne pas sur Internet Explorer ;</li>
+                                <li><strong>.SVG</strong>: SVG Font. Le seul format reconnu sur les iPhone et iPad pour le moment ;</li>
+                                <li><strong>.WOFF</strong>: Web Open Font Format. Nouveau format conçu pour le Web, qui fonctionne sur IE9 et tous les autres navigateurs.</li>
+                            </ul>
+                        </p>
+                            <H4>Décorations de texte:</H4>
+                            <p>-font-style:</p>
+                            <ul>
+                                <li><strong>italic</strong>: italique </li>
+                                <li><strong>oblique</strong>:le texte sera passé en oblique (les lettres sont penchées, le résultat est légèrement différent de l'italique proprement dit) ;</li>
+                                <li><strong>normal</strong>: texte normal, permet d'annuler un texte en EM</li>
+                            </ul>
+                            <p>-font-weight:</p>
+                            <ul>
+                                <li><strong>bold</strong>: texte en gras </li>
+                                <li><strong>normal</strong>: par défaut </li>
+                            </ul>
+                            <p>-text-decoration:</p>
+                            <ul>
+                                <li><strong>underline</strong>: souligné ;</li>
+                                <li><strong>line-through</strong>: barré ;</li>
+                                <li><strong>overline</strong>: ligne au-dessus ;</li>
+                                <li><strong>blink</strong>: clignotant. Ne fonctionne pas sur tous les navigateurs (Internet Explorer et Google Chrome, notamment) ;</li>
+                                <li><strong>none</strong>:aucune décoration (utile pour retirer l'underline d'un lien ;</li>
+                            </ul>
+                            <div class="part_separation">
+                            <div class="under"><h3>V - Les alignements:</h3></div>
                                 <p>
                                     À l'instar des logiciels de traitement de texte, la propriété <strong>text-align</strong> comprend 
                                     les 4 arguments "<strong>left</strong>", "<strong>right</strong>", "<strong>center</strong>", "<strong>justify</strong>". <BR>
@@ -703,7 +846,7 @@
                                 </p>
                             </div>
                             <div class="part_separation">
-                            <div class="under"><h3>V - Les couleurs !</h3></div>
+                            <div class="under"><h3>VI - Les couleurs !</h3></div>
                                 <p>
                                     On regroupe les couleurs par type, chacune d'elle peut avoir une signification même si elle peut varier selon les cultures.
                                     <h4>Les couleurs chaudes :</h4>
@@ -734,18 +877,13 @@
                                     </div>
                                 </p>
                             </div>
-                        <!--TODO:Les intégrations du CSS > L
-                            TODO:la sélection des balises > L
-                            TODO:class et id > L
-                            TODO:balises et sélecteurs > L
-                            TODO:formatage du texte > L
-                            TODO:police, font style, déoration > L
+                        <!--
                             TODO:alignement, flottant > T
                             TODO:couleurs et image de fond > T
                             TODO:bordures et ombres > T
                             TODO:les dimmensions des blocks > T
-                            TODO:flexbox > T
-
+                            TODO:Les médiasQueries > L
+                            
                         -->
                     </article>
                 </section>

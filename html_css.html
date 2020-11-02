@@ -701,7 +701,9 @@
                                     <p>
                                     Ajouter un attribut style  à n'importe quelle balise. Vous insérerez votre code CSS directement dans cet attribut
                                     <strong>&ltp style="color: blue;"&gtBonjour et bienvenue sur mon site !&lt/p&gt</strong>
-                                    </p>
+                                    </p> <br>
+                                En CSS, le style d'une balise sera transmit aux balises à l'intérieur de celle-ci. C'est pour ça que le style de la balise &ltbody&gt est 
+                                transmit aux balises &ltp&gt et &lth1&gt. Toute la page héritera alors des styles, il faudra créer des exceptions pour palier à ça.
                             <hr>
                             <div class="under"><h3>II - la sélection des balises:</h3></div>
                                 <h4>Les sélecteurs de balise:</h4>
@@ -852,6 +854,18 @@
                             <hr>
                             <div class="under"><h3>VI - Les couleurs !</h3></div>
                                 <p>
+                                Comment ça fonctionne ?
+                                <ul>
+                                    <li><strong>La teinte</strong> est le plus basique des termes de couleur et désigne la couleur d’un objet. Lorsque nous disons «bleu», «vert» ou «rouge», nous parlons de teinte.</li>
+                                    <li><strong>La chrominance</strong>, une teinte avec une chrominance élevée n'a pas de noir, de blanc ou de gris ajouté. On se réfère à la couleur pure.</li>
+                                    <li><strong>La saturation</strong> fait référence à la façon dont une teinte apparaît dans des conditions d'éclairage particulières (teintes faibles vs fortes ou pâles vs pures).</li>
+                                    <li><strong>La valeur</strong> se réfère à la luminausité. Plus la valeur est haute, plus la couleur est claire.</li>
+                                    <li><strong>Les tons</strong> sont créés lorsque du gris est ajouté à une teinte, ça peut ajouter de la douceur et de l'élégance.</li>
+                                    <li><strong>Les nuances</strong> sont crées en ajoutant du noir à une teinte. Il est préférable de combiner des nuances avec des teintes ou des neutres plus clairs pour éviter un look trop sombre et trop lourd.</li>
+                                    <li><strong>Une teinte</strong> se forme lorsque du blanc est ajouté à une teinte, l'éclaircissant. Les teintes très claires sont parfois appelées pastels.</li>
+                                </ul>
+                                </p>
+                                <p>
                                 On regroupe les couleurs par type, chacune d'elle peut avoir une signification même si elle peut varier selon les cultures.
                                 </p>
                                 <h4>Les couleurs chaudes :</h4>
@@ -875,25 +889,146 @@
                                     <dl><dt><strong>Violet</strong> - (couleur secondaire)</dt> <dd>Auparavant, le violet était cher à fabriquer et donc étroitement lié à la royauté et la noblesse. On l'associe aujourd'hui à la créativité de par son origine : le mélange de bleu et de rouge hérite de certains attributs.</dd>
                                     </dl>
                                 <h4>Les couleurs neutres :</h4>
-                                <dl><dt><strong>Noir</strong></dt><dd>Le noir est très puissant, utilisé positivement on tend vers l'élégance, le pouvoir .</dd>
+                                <dl><dt><strong>Noir</strong></dt><dd>Le noir est très puissant, utilisé positivement on tend vers l'élégance, le pouvoir. Le côté négatif du noir est son association à la mort et au mystère.</dd>
                                 </dl>
+                                <dl><dt><strong>Blanc</strong></dt><dd>Opposé au noir, le blanc représente la pureté, la propreté et la vertu. C'est une couleur qui se  marrie avec n'importe quelle autre.</dd>
+                                </dl>
+                                <dl><dt><strong>Gris</strong></dt><dd>Le gris peut être considéré comme déprimant. Le gris clair peut remplacer le blanc tandis que le gris foncé peut remplacer le noir. C'est une couleur sophistiquée qui peut servir dans le milieu du design.</dd>
+                                </dl>
+                                <dl><dt><strong>Marron</strong></dt><dd>Le marron est associé à la Terre, au bois et à la pierre. C’est une couleur neutre et chaleureuse. Le brun peut être associé à la fiabilité, à la fermeté et au caractère terreux. Cela peut également être considéré comme terne. <br>
+                                Le marron est souvent utilisé pour le fond, la texture qui rappelera le bois.</dd>
+                                </dl>
+                                <dl><dt><strong>Beige</strong></dt><dd>Le beige est capable de prendre un ton chaud ou froid selon son environnement. Il est souvent réservé aux couleurs de fond. <br>
+                                Il peut symboliser la piété.</dd>
+                                </dl>
+                                <dl><dt><strong>Crème et Ivoir</strong></dt><dd>Ils sont généralement calmes et peuvent souvent évoquer un sens de l’histoire tout en étant légèrement plus chaleureux que le blanc. L'ivoir peut être utilisé pour éclaircir sans imposer le contraste du blanc.</dd>
+                                </dl>
+                                <p>
+                                Pour créer son propre schéma de couleur, nous vous conseillons de vous diriger vers <a href="https://www.smashingmagazine.com/2010/02/color-theory-for-designer-part-3-creating-your-own-color-palettes/" target="_blank">cet article</a>. <br>
+                                En CSS pur il existe 16 couleurs dites standard:
+                                <div style="color: white; display: inline-block; text-shadow: 1px 1px 1px black;">white</div>, <div style="color: silver; display: inline-block;">silver</div>, <div style="color: gray; display: inline-block;">gray</div>, 
+                                <div style="color: black; display: inline-block;">black</div>, <div style="color: red; display: inline-block;">red</div>, <div style="color: maroon; display: inline-block;">maroon</div>, 
+                                <div style="color: lime; display: inline-block;">lime</div>, <div style="color: green; display: inline-block;">green</div>, <div style="color: yellow; display: inline-block;">yellow</div>, 
+                                <div style="color: olive; display: inline-block;">olive</div>, <div style="color: blue; display: inline-block;">blue</div>, <div style="color: navy; display: inline-block;">navy</div>, 
+                                <div style="color: fuchsia; display: inline-block;">fuchsia</div>, <div style="color: purple; display: inline-block;">purple</div>, <div style="color: aqua; display: inline-block;">aqua</div>, 
+                                <div style="color: teal; display: inline-block;">teal</div>. <br>
+                                Il y a deux méthodes pour la notation des couleurs : <br>
+                                <ul>
+                                    <li><strong>Hexadécimale</strong>, soit un nom de couleur en hexadécimal, cela ressemble à : #FF5A28. Pour faire simple, c'est une combinaison de lettres et de chiffres qui indiquent une couleur. On doit toujours commencer par écrire un dièse (#), suivi de six lettres ou 
+                                    chiffres allant de 0 à 9 et de A à F. Ces lettres ou chiffres fonctionnent deux par deux. Les deux premiers indiquent une quantité de rouge, les deux suivants une quantité de vert et les deux derniers une quantité de bleu. En mélangeant ces quantités (qui sont les composantes Rouge-Vert-Bleu de la couleur) on peut obtenir la couleur qu'on veut.</li>
+                                    <li><strong>RGB</strong> fonctionne avec la syntaxe suivante : rgb(xxx,xxx,xxx).</li>
+                                </ul>
+                                </p>
+                            <hr>
+                            <div class="under"><h3>VII - Le background</h3></div>
+                                <p>
+                                Changer la couleur d'arrière-plan, mettre une image d'arrière-plan, ... Utilisons la super propriété <strong>background</strong> qui regroupe 8 propriété de backround:
+                                <ul>
+                                    <li><strong>background-color</strong> spécifie la couleur d'arrière-plan.</li>
+                                    <li><strong>background-image</strong> spécifie une ou des images d'arrière-plan. On peut aussi mettre plusieurs images de fond en séparant les déclarations par des virgules</li>
+                                    <li><strong>background-position</strong> spécifie la position de background-image.</li>
+                                    <li><strong>background-size</strong> spécifie la taille de background-image.</li>
+                                    <li><strong>background-repeat</strong> spécifie si on souhaite répéter et combien de fois l'image d'arrière-plan.</li>
+                                    <li><strong>background-origin</strong> spécifie la zone de positionnement des images d'arrière-plan.</li>
+                                    <li><strong>background-clip</strong> spécifie la zone de peinture des images d'arrière-plan.</li>
+                                    <li><strong>background-attachment</strong> spécifie si les images d'arrière-plan sont fixes ou défilent avec le reste de la page.</li>
+                                </ul>
+                                Il faut juste espacer les attributs et il n'est pas obbligatoire de mettre toutes les propriété. <br>
+                                On peut y ajouter la propriété <strong>opacity</strong> qui varie de 0 à 1 pour la transparence, ce qui nous amène vers l'amélioreation de la notation <strong>RGB</strong> pour <strong>RGBa</strong>, le "canal alpha" correspondant à la transparence.
+                                </p>
+                            <hr>
+                            <div class="under"><h3>VIII - Les bordures</h3></div>
+                                <p>
+                                Il existe de nombreuses bordures en CSS et donc de nombreuses propriétés border-x mais on peut utiliser la super-propriété <strong>border</strong> avec jusqu'à 3 valeurs :
+                                <ul>
+                                    <li><strong>La largeur</strong> (en px, em, %, ...).</li>
+                                    <li><strong>La couleur</strong>.</li>
+                                    <li><strong>Le type de bordure</strong> (solid, dotted, dashed, double, groove, ridge, inset, outset) Elle est de base sur <strong>none</strong>.</li>
+                                </ul>
+                                Si on souhaite être plus précis on peut rajouter à <strong>border</strong> un <strong>-top</strong>, <strong>-bottom</strong>, <strong>-left</strong>, <strong>-right</strong>. <br>
+                                La propriété <strong>border-radius</strong> permet d'arrondir les coins, on peut préciser 1 ou 4 valeurs (en px) pour appliquer l'effet dans cet ordre : haut-gauche, haut-droite, bas-droite, bas-gauche.
+                                </p>
+                            <hr>
+                            <div class="under"><h3>IX - Les ombres</h3></div>
+                                <p>
+                                <ul>
+                                    <li><strong>box-shadow</strong> pour les ombres sur un bloc entier.</li>
+                                    <li><strong>text-shadow</strong> pour les ombres de texte.</li>
+                                </ul>
+                                Ces propriétés fonctionnent de la même manière et prennent 4 valeurs dans l'ordre qui suit :
+                                <ol>
+                                    <li>Décalage horizontale de l'ombre.</li>
+                                    <li>Décalage vertical de l'ombre.</li>
+                                    <li>Adoucicement du dégradé.</li>
+                                    <li>Couleur de l'ombre.</li>
+                                    <li><strong>inset</strong> pour que l'ombre soit à l'intérieur du bloc - facultatif.</li>
+                                </ol>
+                                </p>
+                            <hr>
+                            <div class="under"><h3>X - Les dimmensions</h3></div>
+                                <p>
+                                Les dimmensions sont modifiables avec <strong>width</strong> et <strong>height</strong> (px, em ou %). On peut demander des valeurs minimales et maximales avec <strong>min_width</strong>, <strong>max_width</strong>, <strong>min_height</strong>, <strong>max_height</strong>. <br>
+                                Rq : de base un bloc utilise 100% de la largeur disponible. <br>
+                                Il y a deux type de marge:
+                                <ul>
+                                    <li><strong>margin</strong> pour les marges extérieur</li>
+                                    <li><strong>padding</strong> pour les marges intérieurs</li>
+                                </ul>
+                                Par défault il n'y a pas de marge intérieur mais une extérieur, mais celà dépend de la balise. Le plus simple est d'utiliser des propriétés précises: <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, <strong>right</strong> sur margin ou 
+                                padding avec 4 valeurs de pixels dans l'ordre suivant : haut, droite, bas, gauche. <br>
+                                Lorsqu'on ne connaît pas la résolution du visiteur il est pratique d'avoir un design centré, on donne alors une largeur au bloc avec <strong>width</strong> et on indique que l'on veut une margin <strong>auto</strong>. <br>
+                                L'<strong>overflow</strong> arrive à la rescousse lorsque les mesures sont trop précises et éviter un dépassement :
+                                <ul>
+                                    <li><strong>visible</strong>, par défault il sort du bloc.</li>
+                                    <li><strong>hidden</strong> coupera purement et simplement.</li>
+                                    <li><strong>scroll</strong>, il sera coupé mais une barre de défilement nous aidera à lire le bloc.</li>
+                                    <li><strong>auto</strong> dépendra du navigateur, en général il utilisera scroll.</li>
+                                </ul>
+                                Si un mot ou un URL est trop long pour la largeur, on peut utiliser <strong>word-wrap : break-word</strong> pour le couper et forcer le retour à la ligne. 
+                                </p>
 
-                                    <div style="color: white; display: inline-block; text-shadow: 1px 1px 1px black;">white</div>, <div style="color: silver; display: inline-block;">silver</div>, <div style="color: gray; display: inline-block;">gray</div>, 
-                                    <div style="color: black; display: inline-block;">black</div>, <div style="color: red; display: inline-block;">red</div>, <div style="color: maroon; display: inline-block;">maroon</div>, 
-                                    <div style="color: lime; display: inline-block;">lime</div>, <div style="color: green; display: inline-block;">green</div>, <div style="color: yellow; display: inline-block;">yellow</div>, 
-                                    <div style="color: olive; display: inline-block;">olive</div>, <div style="color: blue; display: inline-block;">blue</div>, <div style="color: navy; display: inline-block;">navy</div>, 
-                                    <div style="color: fuchsia; display: inline-block;">fuchsia</div>, <div style="color: purple; display: inline-block;">purple</div>, <div style="color: aqua; display: inline-block;">aqua</div>, 
-                                    <div style="color: teal; display: inline-block;">teal</div> sont les 16 couleurs standards. <br>
+                            <hr>
+                            <div class="under"><h3>XI - Felxbox</h3></div>
+                                <p>
+                                Avant le module Flexbox il y avait 4 modes de diposition :
+                                <ul>
+                                    <li><strong>block</strong> pour les sections.</li>
+                                    <li><strong>inline</strong> pour le texte.</li>
+                                    <li><strong>table</strong> pour les tables à 2 dimmensions.</li>
+                                    <li><strong>positioned</strong> pour la position explicit d'un élément.</li>
+                                </ul>
+                                Flexbox agit comme si on positionnait des boîtes dans une plus grosse boîte. Pour commencer, il faut donc définir un container flex.<br>
+                                <ul>
+                                    <li>Les <strong>containers</strong>, deviennent flex en utilisant <strong>display: flex;</strong>. Il peut alors avoir différentes propriétés :
+                                        <ul>
+                                            <li><strong>flex-direction</strong> définit donc la direction : <strong>column</strong>, <strong>column-reverse</strong>, <strong>row</strong> et <strong>row-reverse</strong>.</li>
+                                            <li><strong>flex-wrap</strong> définit si les flex-items iront à la ligne ou non : <strong>wrap</strong>, <strong>nowrap</strong> et <strong>wrap-reverse</strong>.</li>
+                                            <li><strong>flex-flow</strong> regroupe <strong>flex-direction</strong> et <strong>flex-wrap</strong>.</li>
+                                            <li><strong>justify-content</strong> est utilisée pour pour aligner des flex-items : <strong>center</strong>, <strong>flex-start</strong>, <strong>flex-end</strong>, <strong>space-between</strong> ou <strong>space-around</strong>.</li>
+                                            <li><strong>align-items</strong> est utilisée pour aligner des flex-items sans modifier les flex-items : <strong>center</strong>, <strong>flex-start</strong>, <strong>flex-end</strong>, <strong>stretch</strong>(défaut), <strong>baseline</strong>.</li>
+                                            <li><strong>align-content</strong> est utilisé pour aligner les flex-lines : <strong>space-between</strong>, <strong>space-around</strong>, <strong>stretch</strong> (défaut), <strong>center</strong>, <strong>flex-start</strong>, <strong>flex-end</strong>.</li>
+                                        </ul>
+                                        Pour un centrage parfait, il suffit de fixer <strong>justify-content</strong> et <strong>align-items</strong> sur "<strong>center</strong>".</li>
+                                    <li>Les <strong>flex items</strong>sont les enfants directs d'un flex container, ils ont les propriétés suivantes :
+                                        <ul>
+                                            <li><strong>order</strong> définit l'ordre des flex-items.</li>
+                                            <li><strong>flex-grow</strong> définit la croissance d'un élément flexible par rapport au reste des éléments flex. La valeur de base est 0.</li>
+                                            <li><strong>flex-shrink</strong> définit dans quelle mesure un élément flexible se rétrécira par rapport au reste des éléments flex. La valeur par défaut est 1.</li>
+                                            <li><strong>flex-basis</strong> définit la longueur initiale d'un flex-item (px).</li>
+                                            <li><strong>flex</strong> comprend <strong>flex-grow</strong>, <strong>flex-shrink</strong> et <strong>flex-basis</strong>.</li>
+                                            <li><strong>align-self</strong> définit l'alignement de l'élément sélectionné à l'intérieur du conteneur flexible. La propriété align-self remplace l'alignement par défaut définit par la propriété <strong>align-items</strong> du conteneur.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                Il ne faut pas oublier l'importance d'un site web "flexé" car c'est un moyen efficace de faciliter le MédiasQueries. <br>
+                                </p>
 
 
                                     </div>
                                 </p>
                             </div>
                         <!--
-                            TODO:alignement, flottant > T
-                            TODO:couleurs et image de fond > T
-                            TODO:bordures et ombres > T
-                            TODO:les dimmensions des blocks > T
+                            TODO:Flexbox > T 
                             TODO:Les médiasQueries > L
                             
                         -->

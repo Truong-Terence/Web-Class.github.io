@@ -26,21 +26,37 @@ body{
         }
     }
 }
+
+#first_padding{
+    padding-bottom: 0em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "LeagueSpartan";
+}
 h1{
     font-weight: 800;
-
+    font-size: 1.5em;
 }
 
 h2{
     font-weight: 600;
+    font-size: 1.2em;
 }
 h3{
     font-weight: 400;
+    font-size: 0.9em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    padding-top: 0.2em;
 }
-h4{
 
-}
-h5{
+//h4{}
+//h5{}
 
+.banniere{
+	background : url('../../../img/banniere2.jpeg') no-repeat;
+	height: 200px;
+	position: relative;
 }
 

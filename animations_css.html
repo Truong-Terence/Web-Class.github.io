@@ -1,12 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!--TODO:apparences dynamiques - hover, ...-->
-    
-</body>
-</html>
+    <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>récap du cours</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link type="text/css" rel="stylesheet" href="styles/css/style.css">
+            </head>
+            <body>
+                <nav>
+                    <div id="search_container">
+                        <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <div class="btn btn__search"><img src="img/search.png" alt="image_search_bar"></div>
+                        </form>
+                    </div>
+                    <h2><a href="index.html">Menu</a></h2>
+                    <div id="menu_line">
+                    <ul>
+                        <li><a href="découverte métier.html">Découverte métier</a></li>
+                        <li><a href="html_css.html">HTML, CSS : kececé ?</a></li>
+                        <li><a href="site_web.html">Transformer une maquette en site Web</a></li>
+                        <li><a href="animations_css.html">animations CSS</a></li>
+                        <li><a href="optimisation.html">Optimisation site web</a></li>
+                        <li><a href="javascript_bootstrapp.html">Javascript & bootstrapp</a></li>
+                        <li><a href="api.html">Les API</a></li>
+                        <li><a href="bases_de_données.html">Bases de données</a></li>
+                        <li><a href="">Projets de cours</a></li>
+                        <li><a href="">Projets externes</a></li>
+                        <li><a href="">piste poursuite d'études</a></li>
+                    </ul>
+                     </div>
+                </nav>
+                <div id="main">
+                    <div class="sticky"><div id="hide">
+                        <div class="trait"></div>
+                        <div class="trait"></div>
+                        <div class="trait"></div>
+                    </div></div>
+                    <div id="smaller_main">
+                        <header id="header">
+                            <div id="separation_border">
+                            <a href="index.html" class="logo"><p></p><strong>WebMastered </strong>by Vittaz & Tété</p></a>
+                                <ul class="icons">
+                                    <li><a href="https://openclassrooms.com/" target="blank"><img src="img/locr.png" alt="image_banniere"id="headerimg"/></a></li>
+                                    <li><a href="https://facebook.com/"target="blank"><img src="img/lfb.png" alt="image_banniere"id="headerimg"/></a></li>
+                                    <li><a href="https://twitter.com/" target="blank"><img src="img/ltwitter.png" alt="image_banniere"id="headerimg" /></a></li>
+                                    <li><a href="https://github.com/"target="blank"><img src="img/lgit.png" alt="image_banniere"id="headerimg" /></a></li>
+                                </ul>
+                            </div>
+                        </header>
+                        <section>
+                            <article>
+                                <h1>Les animations css</h1>
+                                <h2>------</h2>
+                                    <dl id="first_padding">
+                                        <dt><strong>Les animations</strong> ------</dt>
+                                        <dd>--------------.</dd>
+                                        <dt><strong>-----------</strong>
+                                        <dd>-----------------. <br>
+                                            ---------------.
+                                        </dd>
+                                        </dt>
+                                    </dl>
+                                    <!--TODO:Découvrez les animations web
+                                        TODO:Les 12 principes
+                                        TODO:Simples transitions
+                                        TODO:Pseudoclasses
+                                        TODO:apparences dynamiques - hover, ...
+                                        TODO:Propriété multiples
+                                        TODO:Le timing
+                                        TODO:Optimiser les performances
+                                        TODO:La fluidité avec transform
+                                    -->
+                                    <hr>
+                                    <div class="under"><h3>Le point d'ancrage</h3></div>
+                                        <h4>transform-origin</h4>
+                                            <p>
+                                            La propriété <strong>transform</strong> permet une transition partant du centre de l'objet, qui reste sur le même axe.
+                                            Le CSS possède également <strong>transform-origin</strong> qui permet de déplacer le point d'ancrage. <br>
+                                            Pour ce faire, il nous faudra utiliser <strong>transform</strong> comme d'habitude, mais y ajouter cette propriété <strong>transform-origin</strong> (px, %). 
+                                            L'axe X est mesuré à partir de la bordure 
+                                            gauche de l’élément, et l’axe Y est mesuré depuis le bord supérieur. Par défaut les valeurs sont : 50% 50%;
+                                            
+                                            <div class="loading_container">
+                                                <div class="btn btn__basic btn__basic--load">[LOAD]</div>
+                                                <div class="progress">
+                                                    <div class="progress__bar"></div>
+                                                </div>
+                                            </div>
+                                            Il est aussi possible d'utiliser les mots-clés: <strong>left</strong> - <strong>right</strong> - <strong>top</strong> - <strong>bottom</strong>. <br>
+                                            Left  et  top  correspondent à 0 %, tandis que  right  et   bottom correspondent à 100 %. Ainsi, <strong>center center;</strong> correspond aux valeurs par défaut.
+                                            </p>
+                                        <h4>La 3D</h4>
+                                            <p>
+                                            On peut donc mettre 1 ou 2 valeurs à <strong>transform-origin</strong>, mais si on rajoute une 3ème on rajoute l'axe Z(unité réelle - px, cm, ..)
+                                            </p>
+                                    <hr>
+                                    <div class="under"><h3>Les performances</h3></div>
+                                        <h4>DevTools</h4>    
+                                            <p>
+                                            L'onglet <strong>Performances</strong> (ctrl+shift+i), nous permet d'enregistrer le actions de la page ou bien le charement de la page - pour ce qui est visuel on pourra cocher "screenshots". <br>
+                                            Pour une meilleure simulation, on devrait aussi paramétrer le CPU en x6 plus lent. On peut observer ici les différents calculs, les FPS, ...
+                                            </p>
+                                        <h4>Animer en couleur</h4>
+                                            <p>
+                                            Lorsqu'on change de couleur lors d'une animation avec <strong>darken</strong> ou d'autres attributs, cela déclanche un nouveau calcul de Paint, et c'est à éviter. <br>
+                                            L'utilisation d'<strong>opcity</strong> et la structuration du code HTML arrivent à la rescousse, et donneront un répit à notre <strong>layout</strong> : <br>
+                                            La solution est donc la création de deux arrières-plans empilés (z-index) et l'utilisation de l'opacité avec une pseudo-classe.
+                                            </p>
+                                        <h4>Les pseudoélements</h4>
+                                            <p>
+                                            Le <strong>::before</strong> et <strong>::after</strong> sont parfait pour ce genre d'animation, cependant, ils requièrent l'aide de la propriété <strong>content</strong> pour fonctionner. <br>
+                                            On préfèrera la propriété <strong>opacity</strong> pour accélérer les calculs, on peut même l'utiliser pour mettre des couches de couleurs sur une image !
+                                            </p>
+                                    <hr>
+                                    <div class="under"><h3>Les @keyframes</h3></div>
+                                        <p>
+                                        Les <strong>@keyframes</strong> sont comparables à des points de contrôle: ils jalonnent l'itinéraire de nos animations.
+                                        </p>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </body>
+        </html>

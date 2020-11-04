@@ -53,19 +53,32 @@
   background-color: transparent;
 }
 .btn__basic {
-  font-size: 0.6em;
-  font-weight: bold;
-  border: 2px solid #7451eb;
-  padding: 3px 12px 3px 12px;
-  color: #7451eb;
-  border-radius: 3px;
-}
-.btn__basic:hover {
-  transition: all ease-in-out 500ms;
-  transform: scale(1.2);
-  border: #F5F6F7;
-  background: #7451eb;
+  border-radius: 5px;
+  background-color: #7451eb;
+  position: relative;
+  z-index: 1;
+  padding: 5px 15px 5px 15px;
   color: white;
+  font-size: 0.7em;
+}
+.btn__basic:hover::after {
+  opacity: 1;
+}
+.btn__basic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #4f23e6;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+.btn__basic--load:active + .progress > .progress__bar {
+  animation: progress-bar 1000ms;
 }
 
 #search_container {
@@ -118,6 +131,34 @@
   width: auto;
 }
 
+hr {
+  margin-top: 3em;
+  height: 2px;
+  border: none;
+  background: #E9E9E9;
+}
+
+.loading_container .progress {
+  margin: 2em;
+  border: 2px solid black;
+  padding: 4px;
+}
+.loading_container .progress__bar {
+  background: #7451eb;
+  height: 1em;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+@keyframes progress-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
 body {
   background: transparent;
   font-family: "Cantarell", sans-serif;
@@ -147,12 +188,7 @@ body #main #smaller_main {
 }
 
 #first_padding {
-  padding-bottom: 2em;
-}
-
-.part_separation {
-  padding-bottom: 2em;
-  border-top: 2px solid #E9E9E9;
+  padding-bottom: 0em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -172,28 +208,15 @@ h2 {
 h3 {
   font-weight: 400;
   font-size: 0.9em;
-  margin-top: 4em;
+  margin-top: 3em;
   margin-bottom: 1em;
   padding-top: 0.2em;
 }
-
 
 .banniere {
   background: url("../../../img/banniere2.jpeg") no-repeat;
   height: 200px;
   position: relative;
-}
-
-@font-face {
-  font-family: "Cantarell";
-  src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
-  src: url("../fonts/Cantarell/Cantarell-BoldOblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Oblique.ttf");
-  src: url("../fonts/Cantarell/Cantarell-Regular.ttf");
-}
-@font-face {
-  font-family: "Baloo";
-  src: url("../fonts/Baloo/Baloo-Regular.ttf");
 }
 
 body {

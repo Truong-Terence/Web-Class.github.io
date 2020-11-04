@@ -60,7 +60,7 @@ body{
                 position: relative;
                 width: 100%;
                 height: $top_side;
-                background: transparent;
+                background : url('../../../img/banniere2.jpeg');;
                 #separation_border{
                     z-index: 1;
                     position: absolute;
@@ -69,7 +69,11 @@ body{
                     width: 100%;
                     height: $top_side;
                     > a {
+                        margin-left: 5px;
                         text-decoration: none;
+                        font-family: "Playfair", sans-serif;
+                        color: white;
+                        &:visited { text-decoration: none; color: white; }
                     }
                 }
                 .logo{

@@ -1,22 +1,3 @@
-header {
-  width: auto;
-  font-family: "Cantarell", sans-serif;
-  font-weight: bold;
-}
-
-body {
-  width: auto;
-  background-color: #ffbe76;
-  font-family: "Cantarell", sans-serif;
-}
-body nav ul {
-  width: auto;
-  list-style: none;
-}
-body nav ul li a {
-  font-family: "Baloo", "sans-serif";
-}
-
 @font-face {
   font-family: "Cantarell";
   src: url("../fonts/Cantarell/Cantarell-Bold.ttf");
@@ -27,6 +8,325 @@ body nav ul li a {
 @font-face {
   font-family: "Baloo";
   src: url("../fonts/Baloo/Baloo-Regular.ttf");
+}
+@font-face {
+  font-family: "Kaushan";
+  src: url("../fonts/Kaushan/KaushanScript-Regular.otf");
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("../fonts/Playfair/PlayfairDisplay-Black.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-BlackItalic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Bold.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Bold-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplay-Regular.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Black.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-BlackItalic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Bold.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Bold-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Italic.otf");
+  src: url("../fonts/Playfair/PlayfairDisplaySC-Regular.otf");
+}
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("../fonts/LeagueSpartan/LeagueSpartan-Bold.otf");
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("../fonts/Pacifico/Pacifico.ttf");
+}
+@font-face {
+  font-family: "Shlop";
+  src: url("../fonts/Shlop/SHLOP.ttf");
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.btn__search > img {
+  font-size: 1em;
+  padding: 0px;
+  max-width: 1.4em;
+  height: auto;
+  background-color: transparent;
+}
+.btn__basic {
+  border-radius: 5px;
+  background-color: #7451eb;
+  position: relative;
+  z-index: 1;
+  padding: 5px 15px 5px 15px;
+  color: white;
+  font-size: 0.7em;
+}
+.btn__basic:hover::after {
+  opacity: 1;
+}
+.btn__basic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #4f23e6;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+.btn__basic--load:active + .progress > .progress__bar {
+  animation: progress-bar 1000ms;
+}
+
+#search_container {
+  position: relative;
+  display: inline-flex;
+}
+#search_container input {
+  float: left;
+}
+#search_container .btn__search {
+  float: right;
+  transform: translate(-100%, -150%);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#hide {
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+#hide .trait {
+  position: relative;
+  right: 4px;
+  background: #7451eb;
+  width: 30px;
+  height: 5px;
+  margin: 4px;
+}
+#hide:active {
+  transform: rotate(360deg);
+  transition: 500ms;
+}
+
+.under {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 3px solid #7451eb;
+  padding: 0px 20px 0px 0px;
+  color: #7451eb;
+  width: auto;
+}
+
+hr {
+  margin-top: 3em;
+  height: 2px;
+  border: none;
+  background: #E9E9E9;
+}
+
+.loading_container .progress {
+  margin: 2em;
+  border: 2px solid black;
+  padding: 4px;
+}
+.loading_container .progress__bar {
+  background: #7451eb;
+  height: 1em;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+@keyframes progress-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+body {
+  background: transparent;
+  font-family: "Cantarell", sans-serif;
+  width: 100%;
+  margin: 0px;
+}
+body nav {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 20%;
+  overflow: auto;
+}
+body #main {
+  position: fixed;
+  height: 100%;
+  left: 20%;
+  width: 80%;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body #main #smaller_main {
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 100%;
+}
+
+#first_padding {
+  padding-bottom: 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "LeagueSpartan";
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  padding-top: 0.2em;
+}
+
+.banniere {
+  background: url("../../../img/banniere2.jpeg") no-repeat;
+  height: 200px;
+  position: relative;
+}
+
+body {
+  width: 100%;
+}
+body nav {
+  background-color: #d5d0f5;
+  text-align: center;
+  font-size: 18px;
+}
+body nav #search_container {
+  background-color: #7451eb;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #7451eb;
+}
+body nav input {
+  float: left;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 15px;
+  width: 80%;
+  height: 30px;
+  cursor: text;
+}
+body nav h2 {
+  color: #7451eb;
+  font-style: bold;
+  border-bottom: 3px #7451eb solid;
+  margin: 5px;
+  padding: 5PX;
+}
+body nav ul {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+body nav li {
+  display: inline-block;
+  width: 70%;
+  padding: 5px;
+  margin: 5px;
+  border-bottom: 1px #7451eb solid;
+}
+body nav a {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: #7451eb;
+}
+body nav a:hover {
+  filter: saturate(103%) brightness(58%);
+}
+body #main {
+  background: transparent;
+}
+body #main #smaller_main {
+  background: transparent;
+}
+body #main #smaller_main header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: url("../../../img/banniere2.jpeg");
+}
+body #main #smaller_main header #separation_border {
+  z-index: 1;
+  position: absolute;
+  top: -1px;
+  border-bottom: 2px solid #7451eb;
+  width: 100%;
+  height: 100px;
+}
+body #main #smaller_main header #separation_border > a {
+  margin-left: 5px;
+  text-decoration: none;
+  font-family: "Playfair", sans-serif;
+  color: white;
+}
+body #main #smaller_main header #separation_border > a:visited {
+  text-decoration: none;
+  color: white;
+}
+body #main #smaller_main header .logo {
+  font-size: 1.2em;
+  float: left;
+  transform: translate(0%, 80%);
+}
+body #main #smaller_main header .logo > p > strong {
+  font-size: 1.5em;
+}
+body #main #smaller_main header .icons {
+  float: right;
+  transform: translate(0%, 120%);
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+body #main #smaller_main header .icons li {
+  cursor: pointer;
+  margin-right: 25px;
+}
+body #main #smaller_main header .icons > :hover {
+  transform: scale(1.1) rotate(360deg);
+  transition: cubic-bezier(0.98, 0.05, 0.01, 1.07) 2s;
+  filter: contrast(10) invert(100%) hue-rotate(320deg) saturate(100%) brightness(80%);
 }
 
 /*# sourceMappingURL=style.css.map */

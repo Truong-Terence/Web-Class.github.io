@@ -1,0 +1,131 @@
+.btn{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    &__search{
+        > img{
+            font-size: 1em;
+            padding: 0px;
+            max-width: 1.4em;
+            height: auto;
+            background-color: transparent;
+        }
+    }
+    &__basic{
+        border-radius: 5px;
+        background-color: $oprcolor;
+        position: relative;
+        z-index: 1;
+        padding: 5px 15px 5px 15px;
+        color: white;
+        font-size: 0.7em;
+        &:hover{
+            &::after{
+                opacity: 1;
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;  
+            left: 0;
+            background: darken($oprcolor, 10);
+            border-radius: 5px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+        }
+        &--load{
+            &:active{
+            & + .progress{
+                & > .progress__bar{
+                    animation: progress-bar 1000ms;
+                }
+            }
+            }
+        }
+    }
+}
+#search_container{
+    position: relative;
+    display : inline-flex;
+    input{
+        float: left;
+    }
+    .btn__search{
+        float: right;
+        transform: translate(-100%, -150%);
+
+    }
+}
+
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#hide{
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;    
+    border: none;
+    width: 30px;
+    height: 30px;
+    .trait{
+        position: relative;
+        right: 4px;
+        background: $oprcolor;
+        width: 30px;
+        height: 5px;
+        margin: 4px;
+    }
+    &:active{
+        transform: rotate(360deg);
+        transition: 500ms;
+        
+    }
+}
+
+.under{
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 3px solid $oprcolor;
+    padding: 0px 20px 0px 0px;
+    color: $oprcolor;
+    width: auto;
+    }
+
+hr { 
+    margin-top: 3em;
+    height:2px;
+    border : none;
+    background: #E9E9E9;
+    }
+
+.loading_container{
+    .progress{
+        margin: 2em;
+        border: 2px solid black;
+        padding: 4px;
+        &__bar{
+            background: $oprcolor;
+            height: 1em;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform cubic-bezier(.32, 0, .07, 1);
+        }
+    }
+}
+@keyframes progress-bar{
+    from {
+        transform: scaleX(0);   
+    }
+    to {
+        transform: scaleX(1);
+    }
+}

@@ -1,0 +1,108 @@
+body{
+    width: 100%;
+    nav{
+        background-color: $oprcolor2;
+        text-align: center;
+        font-size: 18px;
+            #search_container{
+                background-color: $oprcolor;
+                height: $top_side;
+                width: 100%;
+                border-bottom: 1px solid $oprcolor;
+            }
+                input {
+                    float: left;
+                    border-radius: 10px;
+                    padding: 2px;
+                    margin: 15px;
+                    width: 80%;
+                    height: 30px;
+                    cursor: text;
+                }
+                h2{
+                    color: $oprcolor;
+                    font-style: bold;
+                    border-bottom: 3px $oprcolor solid;
+                    margin: 5px;
+                    padding: 5PX;
+                }
+                    ul{
+                        list-style: none;
+                        display: block;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    li {
+                        display: inline-block;
+                        width: 70%;
+                        padding: 5px;
+                        margin: 5px;
+                        border-bottom: 1px $oprcolor solid;
+                    }
+                    a{
+                        cursor: pointer;
+                        text-decoration: none;
+                        position: relative;
+                        display:block;
+                        color: $oprcolor;
+                    }
+                    a:hover{
+                        filter: saturate(103%) brightness(58%);
+                    }
+    }
+    #main{
+        background: transparent;
+        #smaller_main{
+            background: transparent;
+            header{
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                width: 100%;
+                height: $top_side;
+                background : url('../../../img/banniere2.jpeg');;
+                #separation_border{
+                    z-index: 1;
+                    position: absolute;
+                    top: -1px;
+                    border-bottom: 2px solid $oprcolor;
+                    width: 100%;
+                    height: $top_side;
+                    > a {
+                        margin-left: 5px;
+                        text-decoration: none;
+                        font-family: "Playfair", sans-serif;
+                        color: white;
+                        &:visited { text-decoration: none; color: white; }
+                    }
+                }
+                .logo{
+
+                    font-size: 1.2em;
+                    float: left;
+                    transform: translate(0%, 80%);
+                        > p > strong{
+                        font-size: 1.5em;
+                        }
+                }
+                .icons{
+                    float: right;
+                    transform: translate(0%, 120%);
+                    display: flex;
+                    justify-content: flex-end;
+                    list-style-type: none;
+                        li{
+                        cursor: pointer;
+                        margin-right: 25px;
+                        }
+                    >:hover{
+                        transform: scale(1.1) rotate(360deg);
+                        transition: cubic-bezier(.98,.05,.01,1.07) 2s;
+                        filter: contrast(10) invert(100%) hue-rotate(320deg) saturate(100%) brightness(80%);
+                    }
+                }
+            }            
+        }
+    }
+        
+}

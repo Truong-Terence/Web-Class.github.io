@@ -1,88 +1,66 @@
 body{
     width: 100%;
     nav{
-        position : absolute;
-        z-index: 1;
-        top: 0px;
-        left: 0;
-        height: 100%;
-        width: 20%;
-        overflow: auto;
         background-color: $oprcolor2;
         text-align: center;
         font-size: 18px;
             #search_container{
-            background-color: $oprcolor;
-            height: $top_side;
-            width: 100%;
-            border-bottom: 1px solid $oprcolor;
+                background-color: $oprcolor;
+                height: $top_side;
+                width: 100%;
+                border-bottom: 1px solid $oprcolor;
             }
                 input {
-                float: left;
-                border-radius: 10px;
-                padding: 2px;
-                margin: 15px;
-                width: 80%;
-                height: 30px;
-                cursor: text;
+                    float: left;
+                    border-radius: 10px;
+                    padding: 2px;
+                    margin: 15px;
+                    width: 80%;
+                    height: 30px;
+                    cursor: text;
                 }
                 h2{
-                color: $oprcolor;
-                font-style: bold;
-                border-bottom: 3px $oprcolor solid;
-                margin: 5px;
-                padding: 5PX;
+                    color: $oprcolor;
+                    font-style: bold;
+                    border-bottom: 3px $oprcolor solid;
+                    margin: 5px;
+                    padding: 5PX;
                 }
                     ul{
-                    list-style: none;
-                    display: block;
-                    padding: 0;
-                    margin: 0;
+                        list-style: none;
+                        display: block;
+                        padding: 0;
+                        margin: 0;
                     }
                     li {
-                    display: inline-block;
-                    width: 70%;
-                    padding: 5px;
-                    margin: 5px;
-                    border-bottom: 1px $oprcolor solid;
+                        display: inline-block;
+                        width: 70%;
+                        padding: 5px;
+                        margin: 5px;
+                        border-bottom: 1px $oprcolor solid;
                     }
                     a{
-                    cursor: pointer;
-                    text-decoration: none;
-                    position: relative;
-                    display:block;
-                    color: $oprcolor;
+                        cursor: pointer;
+                        text-decoration: none;
+                        position: relative;
+                        display:block;
+                        color: $oprcolor;
                     }
                     a:hover{
-                    color: $oprhover;
+                        filter: saturate(103%) brightness(58%);
                     }
     }
     #main{
+        background: transparent;
         #smaller_main{
-            #hide{
-                position: absolute;
-                left: 5px;
-                top: 10px;
-                cursor: pointer;
-                border: 0px $oprcolor solid;
-                border-radius: 10px 100px / 120px;
-                width: 30px;
-                height: 30px;
-                .trait{
-                    background: $oprcolor;
-                    width: 30px;
-                    height: 3px;
-                    padding: 1px;
-                    margin: 4px;
-                    align-items: center;
-                }    
-            }
+            background: transparent;
             header{
                 display: flex;
                 justify-content: space-between;
                 position: relative;
                 width: 100%;
                 height: $top_side;
+                background : url('../../../img/banniere2.jpeg');;
                 #separation_border{
                     z-index: 1;
                     position: absolute;
@@ -91,7 +69,11 @@ body{
                     width: 100%;
                     height: $top_side;
                     > a {
+                        margin-left: 5px;
                         text-decoration: none;
+                        font-family: "Playfair", sans-serif;
+                        color: white;
+                        &:visited { text-decoration: none; color: white; }
                     }
                 }
                 .logo{
@@ -116,7 +98,7 @@ body{
                     >:hover{
                         transform: scale(1.1) rotate(360deg);
                         transition: cubic-bezier(.98,.05,.01,1.07) 2s;
-                        filter: invert(100%);
+                        filter: contrast(10) invert(100%) hue-rotate(320deg) saturate(100%) brightness(80%);
                     }
                 }
             }            

@@ -1,0 +1,58 @@
+                                   //   INDEX   //
+
+.banniere{
+    background : url('../../../img/banniere2.jpeg') no-repeat;
+    height: 200px;
+    position: relative;
+}
+
+                                   //  DECOUVERTE METIER //
+                                   // HTML  CSS //
+                                   // TRANSFORMER UNE MAQUETTE EN SITE WEB //
+                                    //  Optimisation du site //
+                                         //  Javascript & bootstrapp //
+                                    //  Les API //
+                                    // BASE DE DONNEES //
+                                    // PROJETS DE COURS //
+                                    // PROJETS EXTERNES //
+                                    // PISTES PROJET ETUDE //
+                                    // GIT //
+
+                                    // ANIMATIONS CSS //
+//Barre de chargement :
+.loading_container{
+     .progress{
+         margin: 2em;
+         border: 2px solid black;
+         padding: 4px;
+         &__bar{
+             background: $oprcolor;
+             opacity: 0;
+             height: 1em;
+             transform-origin: left;
+             transform: scaleX(0.5);
+             transition: transform cubic-bezier(.32, 0, .07, 1);
+             animation: progress-bar $prog-bar-dur $prog-bar-delay;
+         }
+     }
+ }
+ @keyframes progress-bar{
+     0% {
+         transform: scaleX(0);
+     }
+     17% {
+         transform: scaleX(.18);
+     }
+     24% {
+         transform: scaleX(.4);
+     }
+     46% {
+         transform: scaleX(.81);
+     }
+     85%,100% {
+          opacity: 1;
+     }
+     100% {
+         transform: scaleX(1);
+     }
+ }

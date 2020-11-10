@@ -3,7 +3,6 @@ body{
     font-family: "Cantarell", sans-serif;
     width: 100%;
     margin: 0px;
-
     nav{
         position : fixed;
         z-index: 1;
@@ -54,9 +53,26 @@ h3{
 //h4{}
 //h5{}
 
-.banniere{
-	background : url('../../../img/banniere2.jpeg') no-repeat;
-	height: 200px;
-	position: relative;
-}
 
+.paragraphe_image{
+    margin-top: 2em;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    .image_side{
+        width: 50%;
+        height: 100%;
+        padding: 0px;
+        #img_index{
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+
+    .text_side{
+        width: 50%;
+        height: 100%;
+        padding: 0px;
+    }
+}

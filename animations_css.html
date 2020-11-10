@@ -13,7 +13,7 @@
                     <div id="search_container">
                         <form action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search">
-                        <div class="btn btn__search"><img src="img/search.png" alt="image_search_bar"></div>
+                        <div class="search"><img src="img/search.png" alt="image_search_bar"></div>
                         </form>
                     </div>
                     <h2><a href="index.html">Menu</a></h2>
@@ -64,6 +64,12 @@
                                         </dd>
                                         </dt>
                                     </dl>
+                                    <div class="loading_container">
+                                        <!--<div class="btn btn__basic btn__basic--load">[LOAD]</div>-->
+                                            <div class="progress">
+                                                <div class="progress__bar"></div>
+                                            </div>
+                                        </div>
                                     <!--TODO:Découvrez les animations web
                                         TODO:Les 12 principes
                                         TODO:Simples transitions
@@ -85,12 +91,6 @@
                                             L'axe X est mesuré à partir de la bordure 
                                             gauche de l’élément, et l’axe Y est mesuré depuis le bord supérieur. Par défaut les valeurs sont : 50% 50%;
                                             
-                                            <div class="loading_container">
-                                                <div class="btn btn__basic btn__basic--load">[LOAD]</div>
-                                                <div class="progress">
-                                                    <div class="progress__bar"></div>
-                                                </div>
-                                            </div>
                                             Il est aussi possible d'utiliser les mots-clés: <strong>left</strong> - <strong>right</strong> - <strong>top</strong> - <strong>bottom</strong>. <br>
                                             Left  et  top  correspondent à 0 %, tandis que  right  et   bottom correspondent à 100 %. Ainsi, <strong>center center;</strong> correspond aux valeurs par défaut.
                                             </p>
@@ -120,8 +120,9 @@
                                     <div class="under"><h3>Les @keyframes</h3></div>
                                         <p>
                                         Les <strong>@keyframes</strong> sont comparables à des points de contrôle: ils jalonnent l'itinéraire de nos animations.
-                                            
                                         </p>
+                                        <h4>Déclencher les animation au chargement de la page</h4>
+                                        <h4>Ajouter un délai</h4>
                             </article>
                         </section>
                     </div>

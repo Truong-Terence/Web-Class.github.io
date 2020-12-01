@@ -24,5 +24,94 @@
         TODO:Photoshop:
 
     -->
+    <h1>JS</h1>
+        <p> /!\ camelCase : unExempleDeCamelCase /!\ 
+            <ul>
+                <li>let : déclaration de variables</li>
+                <li>const : déclaration de constante</li>
+                <li>number : type pour entiers, décimals, négatifs. /!\ Les virgules sont à éviter pour les calculs (mieux vaut des centimes que des euros) /!\</li>
+                <li>boolean : type ayant pour valeur true or false</li>
+                <li>string : type pour texte. seul le + correspondant à la concaténation fonctionne. " " : espace</li>
+                <li>types de données primitives JS : null, undefined, symbol.</li>
+                <li>classes (objet) : fontionne comme une variable mais sa valeur est entre {}. Dans les {} on insère "clé1: valeur1, clé2: valeur2, etc...". Pour accéder à ces valeurs on tape "class.key". <br>
+                Pour créer une classe on utilise <br>
+                "class NomClasse { <br>
+                constructor(arg1, arg2, arg3){ <br>
+                        this.arg1 = arg1; <br>
+                        this.arg2 = arg2; <br>
+                        this.arg3 = arg3; } <br>
+                    }" <br>
+                    Pour créer une instance on utilise "new" : <br>
+                "let nomInstance = new NomClasse("arg1, arg2, arg3) ;</li>
+                <li>array (tableaux): fonctionne comme une variable avec sa valeur entre []. Dans les [ on insère "value1, value2, value3, value4, etc..."];. Un array est une liste ordonnée donc chaque valeur a son index, allant de 0 à x. <br>
+                Pour appeler une valeur on tape nomArray[index]. Déclarable en tant que constante. <br>
+                On peut placer des variables dans un array. </li>            
+            </ul>
+            Les types primitifs (nombres, string, booleens) sont passés par valeurs : Si après définition d'une variable et insertion de cette variable dans un objet/tableau, on choisis de modifier la variable, la valeur ne sera pas mise à jour car elle ne garde pas de relation avec la variable mais avec la valeur.
+            A l'inverse si on met à jour l'objet ou le tableau, la variable crée le prendra en compte car elle est liée à la référence de cet objet. <br>
+            Manipuler un tableau : nomArray.length; , nomArray.push("string"); - pour ajouter à la fin, nomArray.unshift("string"); - pour ajouter au début, nomArray.pop(); - pour supprimer le dernier. <br>
+            Un "set" ou ensemble, est une liste non ordonnée. Les "map" sont comme un array, fonctionnent sur le principe d'une liste ordonnée avec clé-valeur à la différence qu'elles ne se limitent pas aux strings et peuvent être manipulées.
+            
+        </p>
+
+        <h2>Le JavaScript pour le web</h2>
+            <p>
+            Le DOM corresponds à l'arbre de notre fichier comme suit : <br>
+            <img src="./img/DOM_tree.jpg" alt="DOM"> <br>
+            Dans notre DOM, en associant une constante, on va pouvoir rechercher des éléments en fonction de leurs types dans un document:
+                <ul>
+                    <li>Par <strong>id</strong> avec document.getElementById(""), c'est une méthode précise car il n'existe qu'un élément par id</li>
+                    <li>Par <strong>class</strong> avec document.getElementsByClassName("") qui nous sortira une liste des éléments de la classe, on peut ajuster la recherche à l'aide d'index</li>
+                    <li>Par <strong>tag</strong> avec document.getElementsByTagName(""). On obitendra une liste également</li>
+                    <li>Par <strong>sélecteur</strong> avec document.querySelector("") qui fonctionne de manière plus complexe, par exemple : <em>document.querySelector("#myId p.article > a")</em> ira chercher dans l'élément ayant pour id  #myId , les éléments de type &ltp&gt qui ont pour classe  article,
+                         afin de récupérer le lien &lta&gt qui est un enfant direct (pas des enfants de ses enfants). Il renverra le 1er résultat ou <em>null</em> si aucun élément n'est trouvé</li>
+                </ul>
+            On peut aussi parcourir des enfants et parents d'élements :
+                <ul>
+                    <li>Pour <strong>children</strong> : element.children nous retourne la liste des enfants de cet élément</li>
+                    <li>Pour <strong>parents</strong> : element.parentElement retourne l'élément parent de celui-ci</li>
+                    <li>Pour ce qui l'<strong>entoure</strong> : element.nextElementSibling / element.previousElementSibling permet de naviguer vers l'élément suivant / précédent de même niveau</li>
+                </ul>
+            </p>
+        <h2>Modifier le contenu d'un élément</h2>
+            <p>
+            Définir une valeur à <em>innerHTML</em> ou <em>textContent</em> remplace directement le contenu actuel de l'élément par celui que vous précisez. <br>
+            </p>
+        <h2>Modifier les classes</h2>
+            <p>
+            La propriété <strong>classList</strong> permet d'accéder direcement à la liste des classes d'un élément et permet les fonctions suivantes :
+                <ul>
+                    <li>add(&ltstring&gt, [&ltstring&gt, ...] ) : ajoute la ou les classes spécifiées</li>
+                    <li>remove(&ltstring&gt, [&ltstring&gt, ...] ) : supprime la ou les classes spécifiées</li>
+                    <li>contains(&ltstring&gt ) : vérifie si la classe spécifiée est contenue par cet élément</li>
+                    <li>replace(&ltold&gt, &ltnew&gt ) : remplace l'ancienne classe par la nouvelle classe</li>
+                </ul>
+            </p>
+        <h2>Changer les styles d'un élément</h2>
+            <p>
+            elt.style.color = "#fff" change la couleur du texte de l'élément à blanche.
+            elt.style.backgroundColor = "#000" change la couleur de fond de l'élément en noir.
+            elt.style.fontWeight = "bold" met le texte de l'élément en gras.
+            </p>
+        <h2>Modifier les attributs</h2>
+            <p>
+            Voici quelques exemples avec  elt  faisant référence à un élément de type  input  :
+                <ul>
+                    <li>elt.setAttribute("type", "password") change le type de l'input en un type password</li>
+                    <li>elt.setAttribute("name", "my-password") change le nom de l'input en my-password</li>
+                    <li>elt.getAttribute("name") retourne my-password</li>
+                </ul>
+                On peut utiliser les fonctions getAttribute et removeAttribute.
+            </p>
+        <h2>Créer de nouveaux éléments</h2>
+            <p>
+            <strong>document.createElement(&lttag&gt)</strong> prend en paramètre le nom de la balise de notre élément et nous renvoie l'élément nouvellement créé. <br>
+            Exemple : const newElt = document.createElement("div"). <br>
+            Un élément créé avec cette fonction ne fait pas encore partie du document, vous ne le verrez donc pas sur votre page. Pour le voir, il va d'abord falloir l'ajouter en tant qu'enfant à un élément.
+            </p>
+        <h2>Ajouter des enfants</h2>
+            <p>
+            
+            </p>
 </body>
 </html>

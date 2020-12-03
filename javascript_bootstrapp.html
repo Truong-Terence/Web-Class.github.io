@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="styles/css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,5 +25,287 @@
         TODO:Photoshop:
 
     -->
+    <nav>
+        <div id="search_container">
+            <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <div class="search"><img src="img/search.png" alt="image_search_bar"></div>
+            </form>
+        </div>
+        <h2><a href="index.html">Menu</a></h2>
+        <div id="menu_line">
+        <ul>
+            <li><a href="découverte métier.html">Découverte métier</a></li>
+            <li><a href="html_css.html">HTML, CSS : kececé ?</a></li>
+            <li><a href="site_web.html">Transformer une maquette en site Web</a></li>
+            <li><a href="animations_css.html">animations CSS</a></li>
+            <li><a href="optimisation.html">Optimisation site web</a></li>
+            <li><a href="javascript_bootstrapp.html">Javascript & bootstrapp</a></li>
+            <li><a href="api.html">Les API</a></li>
+            <li><a href="bases_de_données.html">Bases de données</a></li>
+            <li><a href="">Projets de cours</a></li>
+            <li><a href="">Projets externes</a></li>
+            <li><a href="">piste poursuite d'études</a></li>
+        </ul>
+         </div>
+    </nav>
+    <div id="main">
+        <div class="sticky"><div id="hide">
+            <div class="trait"></div>
+            <div class="trait"></div>
+            <div class="trait"></div>
+        </div></div>
+        <div id="smaller_main">
+            <header id="header">
+                <div id="separation_border">
+                <a href="index.html" class="logo"><p></p><strong>WebMastered </strong>by Vittaz & Tété</p></a>
+                    <ul class="icons">
+                        <li><a href="https://openclassrooms.com/" target="blank"><img src="img/locr.png" alt="image_banniere"id="headerimg"/></a></li>
+                        <li><a href="https://facebook.com/"target="blank"><img src="img/lfb.png" alt="image_banniere"id="headerimg"/></a></li>
+                        <li><a href="https://twitter.com/" target="blank"><img src="img/ltwitter.png" alt="image_banniere"id="headerimg" /></a></li>
+                        <li><a href="https://github.com/"target="blank"><img src="img/lgit.png" alt="image_banniere"id="headerimg" /></a></li>
+                    </ul>
+                </div>
+            </header>
+    <h2>JS</h2>
+        <p> /!\ camelCase : unExempleDeCamelCase /!\ 
+            <ul>
+                <li>let : déclaration de variables</li>
+                <li>const : déclaration de constante</li>
+                <li>number : type pour entiers, décimals, négatifs. /!\ Les virgules sont à éviter pour les calculs (mieux vaut des centimes que des euros) /!\</li>
+                <li>boolean : type ayant pour valeur true or false</li>
+                <li>string : type pour texte. seul le + correspondant à la concaténation fonctionne. " " : espace</li>
+                <li>types de données primitives JS : null, undefined, symbol.</li>
+                <li>classes (objet) : fontionne comme une variable mais sa valeur est entre {}. Dans les {} on insère "clé1: valeur1, clé2: valeur2, etc...". Pour accéder à ces valeurs on tape "class.key". <br>
+                Pour créer une classe on utilise <br>
+                <div class="code_section">
+                class NomClasse { <br>
+                constructor(arg1, arg2, arg3){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg1 = arg1; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg2 = arg2; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg3 = arg3; } <br>
+                    } <br>
+                </div>
+                    Pour créer une instance on utilise "new" : <br>
+                    <div class="code_section">let nomInstance = new NomClasse("arg1, arg2, arg3) ;</div></li>
+                <li>array (tableaux): fonctionne comme une variable avec sa valeur entre []. Dans les [ on insère "value1, value2, value3, value4, etc..."];. Un array est une liste ordonnée donc chaque valeur a son index, allant de 0 à x. <br>
+                Pour appeler une valeur on tape nomArray[index]. Déclarable en tant que constante. <br>
+                On peut placer des variables dans un array. </li>            
+            </ul>
+            Les types primitifs (nombres, string, booleens) sont passés par valeurs : Si après définition d'une variable et insertion de cette variable dans un objet/tableau, on choisis de modifier la variable, la valeur ne sera pas mise à jour car elle ne garde pas de relation avec la variable mais avec la valeur.
+            A l'inverse si on met à jour l'objet ou le tableau, la variable crée le prendra en compte car elle est liée à la référence de cet objet. <br>
+            Manipuler un tableau : nomArray.length; , nomArray.push("string"); - pour ajouter à la fin, nomArray.unshift("string"); - pour ajouter au début, nomArray.pop(); - pour supprimer le dernier. <br>
+            Un "set" ou ensemble, est une liste non ordonnée. Les "map" sont comme un array, fonctionnent sur le principe d'une liste ordonnée avec clé-valeur à la différence qu'elles ne se limitent pas aux strings et peuvent être manipulées.
+            
+        </p>
+
+        <hr>
+        <div class="under"><h3>Le JavaScript pour le web</h3></div>
+            <p>
+            Le DOM corresponds à l'arbre de notre fichier comme suit : <br>
+            <img src="./img/DOM_tree.jpg" alt="DOM"> <br>
+            Dans notre DOM, en associant une constante, on va pouvoir rechercher des éléments en fonction de leurs types dans un document:
+                <ul>
+                    <li>Par <strong>id</strong> avec document.getElementById(""), c'est une méthode précise car il n'existe qu'un élément par id</li>
+                    <li>Par <strong>class</strong> avec document.getElementsByClassName("") qui nous sortira une liste des éléments de la classe, on peut ajuster la recherche à l'aide d'index</li>
+                    <li>Par <strong>tag</strong> avec document.getElementsByTagName(""). On obitendra une liste également</li>
+                    <li>Par <strong>sélecteur</strong> avec document.querySelector("") qui fonctionne de manière plus complexe, par exemple : <em>document.querySelector("#myId p.article > a")</em> ira chercher dans l'élément ayant pour id  #myId , les éléments de type &ltp&gt qui ont pour classe  article,
+                         afin de récupérer le lien &lta&gt qui est un enfant direct (pas des enfants de ses enfants). Il renverra le 1er résultat ou <em>null</em> si aucun élément n'est trouvé</li>
+                </ul>
+            On peut aussi parcourir des enfants et parents d'élements :
+                <ul>
+                    <li>Pour <strong>children</strong> : element.children nous retourne la liste des enfants de cet élément</li>
+                    <li>Pour <strong>parents</strong> : element.parentElement retourne l'élément parent de celui-ci</li>
+                    <li>Pour ce qui l'<strong>entoure</strong> : element.nextElementSibling / element.previousElementSibling permet de naviguer vers l'élément suivant / précédent de même niveau</li>
+                </ul>
+            </p>
+        <hr>
+        <div class="under"><h3>Modifier le DOM</h3></div>
+            <h4>Modifier le contenu d'un élément</h4>
+                <p>
+                Définir une valeur à <em>innerHTML</em> ou <em>textContent</em> remplace directement le contenu actuel de l'élément par celui que vous précisez. <br>
+                </p>
+            <h4>Modifier les classes</h4>
+                <p>
+                La propriété <strong>classList</strong> permet d'accéder direcement à la liste des classes d'un élément et permet les fonctions suivantes :
+                    <ul>
+                        <li>add(&ltstring&gt, [&ltstring&gt, ...] ) : ajoute la ou les classes spécifiées</li>
+                        <li>remove(&ltstring&gt, [&ltstring&gt, ...] ) : supprime la ou les classes spécifiées</li>
+                        <li>contains(&ltstring&gt ) : vérifie si la classe spécifiée est contenue par cet élément</li>
+                        <li>replace(&ltold&gt, &ltnew&gt ) : remplace l'ancienne classe par la nouvelle classe</li>
+                    </ul>
+                </p>
+            <h4>Changer les styles d'un élément</h4>
+                <p>
+                elt.style.color = "#fff" change la couleur du texte de l'élément à blanche.
+                elt.style.backgroundColor = "#000" change la couleur de fond de l'élément en noir.
+                elt.style.fontWeight = "bold" met le texte de l'élément en gras.
+                </p>
+           <h4>Modifier les attributs</h4>
+                <p>
+                Voici quelques exemples avec  elt  faisant référence à un élément de type  input  :
+                    <ul>
+                        <li>elt.setAttribute("type", "password") change le type de l'input en un type password</li>
+                        <li>elt.setAttribute("name", "my-password") change le nom de l'input en my-password</li>
+                        <li>elt.getAttribute("name") retourne my-password</li>
+                    </ul>
+                    On peut utiliser les fonctions getAttribute et removeAttribute.
+                </p>
+            <h4>Créer de nouveaux éléments</h4>
+                <p>
+                <strong>document.createElement(&lttag&gt)</strong> prend en paramètre le nom de la balise de notre élément et nous renvoie l'élément nouvellement créé. <br>
+                Exemple : const newElt = document.createElement("div"). <br>
+                Un élément créé avec cette fonction ne fait pas encore partie du document, vous ne le verrez donc pas sur votre page. Pour le voir, il va d'abord falloir l'ajouter en tant qu'enfant à un élément.
+                </p>
+            <h4>Ajouter des enfants</h4>
+                <p>
+                parentNode.appendChild(&ltelement&gt) prend en paramètre l'élément à ajouter en tant qu'enfant. L'élément depuis lequel on appelle cette fonction devient donc le parent de notre élément. <br>
+                Exemple : <br>            
+                const newElt = document.createElement("div"); <br>
+                let elt = document.getElementById("main"); <br>            
+                elt.appendChild(newElt);
+                </p>
+            <h4>Supprimez et remplacez des éléments</h4>
+                <p>
+                elt.removeChild(newElt) supprime l'élément newElt de l'élément elt. <br>
+                elt.replaceChild(document.createElement("article"), newElt) remplace l'élément newElt par un nouvel élément de type article.
+                </p>
+        <hr>
+        <div class="under"><h3>Ecouter les évènements</h3></div>
+            <dl>
+                <dt><strong>Evènement</strong></dt><dd>Un événement est une réaction à une action émise par l'utilisateur, comme le clic sur un bouton ou la saisie d'un texte dans un formulaire. <br>
+                En JavaScript, il est représenté par un nom ( click ,  mousemove ...) et une fonction que l'on nomme une  <strong>callback</strong> . Un événement est par défaut propagé, c'est-à-dire que si nous n'indiquons pas à l'événement que nous le traitons, il sera transmis à l'élément parent, et ainsi de suite jusqu'à l'élément racine</dd>
+            </dl>
+            <h4>Réagir lors d'un clic</h4>
+                <p>
+                La fonction addEventListener() permet d'écouter tous types d'événements. <br>
+                addEventListener(&ltevent&gt, &ltcallback&gt) prend en paramètres le nom de l'événement à écouter et la fonction à appeler dès que l'événement est exécuté. <br>
+                On pourra se référer à la <a href="https://developer.mozilla.org/fr/docs/Web/Events" target="blank">liste des évènements</a>. <br>
+                <dl>
+                    <dt><strong>addEventListener()</strong></dt><dd>const elt = document.getElementById('mon-lien');.....On récupère l'élément sur lequel on veut détecter le clic <br>
+                        elt.addEventListener('click', function() {.....................On écoute l'événement click <br>
+                        elt.innerHTML = "C'est cliqué !";................................On change le contenu de notre élément pour afficher "C'est cliqué !" <br>
+                        });</dd>
+                    <dt><strong>preventDefault()</strong></dt><dd>Si il s'agit d'un lien, et dès que l'on clique sur un lien, le navigateur nous redirige sur la page vers laquelle il pointe, c'est le comportement par défault. <br> <br>
+                        const elt = document.getElementById('mon-lien');......Récupération de l'élément sur lequel on veut détecter le clic <br>
+                        elt.addEventListener('click', function(event) {.............Ecoute de l'événement click, notre callback prend un paramètre que nous avons appelé event ici <br>
+                        event.preventDefault();.................................................La fonction preventDefault empêche le comportement par défaut lors du clic<br>
+                        });</dd>
+               
+                    <dt><strong>stopPropagation()</strong></dt><dd>Fonction de l'objet que votre fonction reçoit en paramètre. Son rôle est par contre très différent, car il nous permet d'empêcher la propagation de l'événement vers son parent. <br>
+                        Admettons par exemple que nous ayons un élément pour lequel nous voulons afficher un message lorsque l'on clique dessus. Mais à l'intérieur de cet élément, nous avons aussi un autre élément qui doit nous afficher un autre message lorsque l'on clique dessus.
+
+                        Par défaut, si nous cliquons dans l'élément intérieur, le message va s'afficher, puis notre élément parent va lui aussi recevoir l'événement du clic et encore changer le message. Pour éviter cela, nous devons stopper la propagation de l'événement. <br> <br>
+                        elementInterieur.addEventListener('click', function(event) { <br>
+                        event.stopPropagation(); <br>
+                        elementAvecMessage.innerHTML = "Message de l'élément intérieur"; <br>
+                        });</dd>
+                </dl>
+                </p>
+        <hr>
+        <div class="under"><h3>Récupérer des données utilisateur</h3></div>
+            <p>En plus de ces deux dernières propriétés, on peut retrouver <a href="https://developer.mozilla.org/fr/docs/Web/API/Event">ici</a> ce que propose l'interface <strong>event</strong>.</p>
+            <h4>Détecter les mouvements de souris</h4>
+                <p>
+                En écoutant l'event <strong>mousemove</strong>, on obtient l'objet de type <strong>MouseEvent</strong> qui contient :
+                    <ul>
+                        <li>clientX  /  clientY  : position de la souris dans les coordonnées locales (contenu du DOM)</li>
+                        <li>offsetX  /  offsetY  : position de la souris par rapport à l'élément sur lequel on écoute l'événement</li>
+                        <li>pageX  /  pageY  : position de la souris par rapport au document entier</li>
+                        <li>screenX  /  screenY  : position de la souris par rapport à la fenêtre du navigateur</li>
+                        <li>movementX  /  movementY  : position de la souris par rapport à la position de la souris lors du dernier événement  mousemove</li>
+                    </ul>
+                    <dl>
+                        <dt>elt.addEventListener('mousemove', function(event) {</dt>
+                            <dd>const x = event.offsetX; // Coordonnée X de la souris dans l'élément <br>
+                            const y = event.offsetY; // Coordonnée Y de la souris dans l'élément <br>
+                            });</dd>
+                    </dl>
+                </p>
+            <h4>Lire le contenu d'un champ de texte</h4>
+                <p>
+                    <dl><strong>change</strong> :
+                        <dt>const selectElement = document.querySelector('.ice-cream'); <br>
+                            selectElement.addEventListener('change', (event) => { <br>
+                            const result = document.querySelector('.result'); <br>
+                            result.textContent = `You like ${event.target.value}`; <br>
+                            });</dd> <br>
+                        <strong>input</strong> :
+                        <dt>input.addEventListener('input', function(event) {</dt>
+                        <dd>output.innerHTML = event.target.value; <br>
+                        });</dd>
+                    </dl>
+                </p>
+        <hr>
+        <div class="under"><h3>Un service web</h3></div>
+            <p>
+            Chaque <strong>requête</strong> requiert un <strong>langage</strong> et un <strong>protocole de communication</strong> différent. <br>
+                <dl>
+                    <dt><strong>SMTP</strong> - Simple Mail Transfer Protocol</dt><dd>Protocole pour l'envoi de mail</dd>
+                    <dt><strong>IMAP</strong> - Internet Message Access Protocol</dt><dd>Protocole pour la réception de mail</dd>
+                    <dt><strong>HTTP</strong> - HyperText Transfer Protocol</dt><dd>Protocole lié à des ressources web. Il permet de charger les pages HTML, CSS, polices, images, ... Il permet également d'envoyer/récupérer des formulaires et des données. </dd>
+                    <dt><strong>FTP</strong> - File Transfer Protocol</dt><dd>Protocole lié aux transferts de fichiers</dd>
+                </dl>
+            </p>
+            <h4>Les codes HTTP</h4>
+                <p>
+                Si le service web ne comprend pas la requête, il peut renvoyer à un <a href="https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP">code</a> :
+                    <ul>
+                        <li>Les codes de 100 à 199 sont des codes d'information, plutôt techniques et peu utilisés en pratique</li>
+                        <li>Les codes de 200 à 299 sont des codes de succès. Ils veulent dire que votre requête s'est bien déroulée et vous apporteront une information sur le type de résultat que vous recevez</li>
+                        <li>Les codes de 300 à 399 sont les codes de redirection. Ils indiquent généralement que le contenu que vous recherchez a bougé ou n'est pas accessible directement</li>
+                        <li>Les codes de 400 à 499 sont des codes d'erreur liés à l'utilisation du service web (ressource inexistante, authentification requise, pas les bonnes permissions, requête mal construite, etc). Ce sont des erreurs que l'on retrouve fréquemment dans la pratique et pour lesquelles il est bon d'avoir une stratégie de résolution</li>
+                        <li>Les codes de 500 à 599 sont des codes d'erreur venant du service web (plantage du service, service ne répondant plus, manque de mémoire, etc.). En tant qu'utilisateur du service, vous ne pouvez pas y faire grand-chose, mais de la même manière que pour les erreurs 4xx, il est bon d'avoir une stratégie de résolution</li>
+                    </ul>
+                    <ul>Les principaux codes sont :
+                        <li>200 : indique que tout s'est bien passé</li>
+                        <li>201 : indique que tout s'est bien passé et qu'une nouvelle ressource a bien été créée</li>
+                        <li>204 : indique que tout s'est bien passé mais qu'aucun résultat n'est renvoyé</li>
+                        <li>400 : indique qu'une requête est erronée</li>
+                        <li>401 : indique que l'utilisateur n'est pas authentifié, alors que c'est nécessaire</li>
+                        <li>403 : indique que l'utilisateur n'a pas le droit d'accéder à cette ressource</li>
+                        <li>404 : indique que la ressource demandée n'existe pas</li>
+                        <li>500 : indique que le serveur a subi une erreur interne</li>
+                    </ul>
+                </p>
+            <h4>Les métohdes HTTP</h4>
+                <p>
+                Les méthodes HTTP permettent d'identifier le type de requête que vous souhaitez faire. Voici les principales :
+                    <ul>
+                        <li><strong>GET</strong> : permet de récupérer des ressources, comme par exemple le temps actuel sur un service de météo</li>
+                        <li><strong>POST</strong> : permet de créer ou modifier une ressource, comme la création d'un nouvel utilisateur sur votre application</li>
+                        <li><strong>PUT</strong> : permet de modifier une ressource, comme le nom de l'utilisateur que vous venez de créer avec POST</li>
+                        <li><strong>DELETE</strong> : Permet de supprimer une ressource, comme un commentaire dans un fil de discussion</li>
+                    </ul>
+                </p>
+            <h4>Les API</h4>
+                <p>
+                <dl>
+                    <dt><strong>API</strong> - Application Programming Interface</dt><dd>Interface mettant à disposition des points d'accès vers les ressources de l'application</dd>
+                </dl>
+                </p>
+        <hr>
+        <div class="under"><h3>Récupérer des données d'un service web</h3></div>
+            <h4>AJAX</h4>
+            
+                <p>
+                    <dl>
+                        <dt><strong>AJAX</strong> - Asynchronous JavaScript And XML</dt><dd>Ensemble d'objets et de fonctions mis à disposition par le langage JavaScript, afin d'exécuter des requêtes HTTP de manière asynchrone</dd>
+                    </dl>
+                    AJAX va nous permettre d'exécuter des requêtes HTTP sans avoir besoin de recharger la page du navigateur. <br>
+                    On pourra avoir un site plus réactif et améliorer l'expérience utilisateur avec du nouveau contenu qui se charge au fur et à mesure qu'on le découvre, par exemple. <br>
+                    var request = new XMLHttpRequest(); <br>
+                    request.open("GET", "http://url-service-web.com/api/users"); <br>
+                    request.send();<br>
+                    Ce code nous permet d'envoyer une requête HTTP de type GET au service web se trouvant à l'adresse  http://url-service-web.com/api/users .
+                </p>
+            <h4>Récupérer les données au format JSON</h4>
+                <p>
+                Il faut maintenant récupérer et interpréter notre résultat.
+                    <dl>
+                        <dt><strong>JSON</strong> - JavaScript Object Notation</dt><dd>Format textuel (contrairement à un format binaire plus léger mais impossible à lire à l'œil humain), se rapprochant en termes de syntaxe de celui des objets dans le langage JavaScript</dd>
+                    </dl>
+                    Il n'est pas nécessaire de le <em>parser</em>. C'est-à-dire que notre application doit le lire et le comprendre afin d'en faire ce qu'on veut, votre navigateur sait directement le lire et le transformer en objets JavaScript.
+                </p>
 </body>
 </html>

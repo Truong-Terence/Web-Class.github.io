@@ -141,6 +141,17 @@ hr {
   background: #E9E9E9;
 }
 
+.code_section {
+  height: 100%;
+  width: 90%;
+  border: 0.2em solid #34495e;
+  background: #2c3e50;
+  padding: 0.5em;
+  border-radius: 10px;
+  color: #ecf0f1;
+  font-size: 0.8em;
+}
+
 .banniere {
   background: url("../../../img/banniere2.jpeg") no-repeat;
   height: 200px;

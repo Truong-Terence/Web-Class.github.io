@@ -40,6 +40,91 @@
   font-family: "Shlop";
   src: url("../fonts/Shlop/SHLOP.ttf");
 }
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("../fonts/UbuntuMono/UbuntuMono-Bold.ttf");
+  src: url("../fonts/UbuntuMono/UbuntuMono-BoldItalic.ttf");
+  src: url("../fonts/UbuntuMono/UbuntuMono-Italic.ttf");
+  src: url("../fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+}
+.pre_code {
+  height: 20px;
+  width: 97%;
+  margin: 0px;
+  padding: 0px;
+  background: transparent;
+  color: #A4A4A4;
+  font-size: 10px;
+  font-family: "UbuntuMono", sans-serif;
+  text-align: right;
+}
+
+.code {
+  height: 100%;
+  width: 90%;
+  background: #272822;
+  margin: 0px;
+  padding: 10px 30px 10px 15px;
+  border-radius: 10px;
+  color: #f8f8f2;
+  font-size: 14px;
+  font-family: "UbuntuMono", sans-serif;
+  line-height: 18px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+}
+.code__line {
+  font-size: 13px;
+  color: #8B8C86;
+  padding-right: 10px;
+}
+.code__html--balise {
+  color: #FE4481;
+}
+.code__html--sign {
+  color: #FE4481;
+}
+.code__html--text {
+  color: #E6DB74;
+}
+.code__html--num {
+  color: #A47AEF;
+}
+.code__css--balise {
+  color: #FE4481;
+}
+.code__css--sign {
+  color: #FE4481;
+}
+.code__css--text {
+  color: #E6DB74;
+}
+.code__css--num {
+  color: #A47AEF;
+}
+.code__js--class {
+  color: #FE4481;
+}
+.code__js--var {
+  color: #62CFE3;
+}
+.code__js--num {
+  color: #A47AEF;
+}
+.code__js--text {
+  color: #E6DB74;
+}
+.code__js--object {
+  color: #97CB2D;
+}
+.code__js--mot_cle {
+  color: #97CB2D;
+}
+.code__js--sign {
+  color: #FE4481;
+}
+
 .btn {
   display: inline-block;
   text-align: center;
@@ -74,7 +159,6 @@
   z-index: -1;
   transition: opacity 250ms;
 }
-
 #search_container {
   position: relative;
   display: inline-flex;
@@ -141,17 +225,24 @@ hr {
   background: #E9E9E9;
 }
 
-.code_section {
-  height: 100%;
-  width: 90%;
-  border: 0.2em solid #34495e;
-  background: #2c3e50;
-  padding: 0.5em;
-  border-radius: 10px;
-  color: #ecf0f1;
-  font-size: 0.8em;
+.wheel {
+  margin: 10em 2em 2em 20em;
+  width: 20em;
+  height: 20em;
+  animation: wheel 3s linear infinite paused;
+}
+.wheel:hover {
+  animation-play-state: running;
 }
 
+@keyframes wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .banniere {
   background: url("../../../img/banniere2.jpeg") no-repeat;
   height: 200px;
@@ -194,7 +285,7 @@ hr {
   }
 }
 body {
-  background: transparent;
+  background: #F5F6F7;
   font-family: "Cantarell", sans-serif;
   width: 100%;
   margin: 0px;

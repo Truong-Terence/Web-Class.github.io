@@ -1,0 +1,59 @@
+.pre_code{
+    height: 20px;
+    width: 97%;
+    margin: 0px;
+    padding: 0px;
+    background: transparent;
+    color: #A4A4A4;
+    font-size: 10px;
+    font-family: "UbuntuMono", sans-serif;
+    text-align: right;
+}
+.code{
+    height: 100%;
+    width: 90%;
+    background: #272822;
+    margin: 0px;
+    padding: 10px 30px 10px 15px;
+    border-radius: 10px;
+    //Font
+    color: #f8f8f2;
+    font-size: 14px;
+    font-family: "UbuntuMono", sans-serif;
+    //Spacing
+    line-height: 18px;
+    vertical-align: baseline;
+    letter-spacing: normal;
+    word-spacing: 0px;
+    &__line{
+        font-size: 13px;
+        color: #8B8C86;
+        padding-right: 10px;
+    }
+
+    &__html{
+
+        &--balise{color: #FE4481;}
+        &--sign{color: #FE4481;}
+        &--text{color: #E6DB74;}
+        &--num{color: #A47AEF;}
+
+    }
+    &__css{
+        &--balise{color: #FE4481;}
+        &--sign{color: #FE4481;}
+        &--text{color: #E6DB74;}
+        &--num{color: #A47AEF;}
+
+    }
+    &__js{
+        &--class{color: #FE4481;}
+        &--var{color: #62CFE3;}
+        &--num{color: #A47AEF;}
+        &--text{color: #E6DB74;}
+        &--object{color: #97CB2D;}
+        &--mot_cle{color: #97CB2D;}
+        &--sign{color: #FE4481;}
+    }
+
+}

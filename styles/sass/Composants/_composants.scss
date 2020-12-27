@@ -30,6 +30,11 @@
             z-index: -1;
             transition: opacity 250ms;
         }
+        &--fortune_wheel{
+            &:active + .wheel{
+
+            }
+        }
     }
 }
 
@@ -101,15 +106,21 @@ hr {
     background: #E9E9E9;
     }
 
-.code_section{
-    height: 100%;
-    width: 90%;
-    border: .2em solid #34495e;
-    background: #2c3e50;
-    padding: .5em;
-    border-radius: 10px;
-    color: #ecf0f1;
-    font-size: .8em;
-    
+.wheel {
+    margin: 10em 2em 2em 20em;
+    width: 20em;
+    height: 20em;
+    animation: wheel 3s linear infinite paused;
+    &:hover{
+        animation-play-state: running;
+    }
+}
 
+@keyframes wheel {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

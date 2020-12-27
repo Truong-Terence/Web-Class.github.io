@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="styles/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/stack.png">
     <title>Document</title>
 </head>
 <body>
@@ -67,7 +68,7 @@
                     </ul>
                 </div>
             </header>
-    <h2>JS</h2>
+    <h2>Le JavaScript</h2>
         <p> /!\ camelCase : unExempleDeCamelCase /!\ 
             <ul>
                 <li>let : déclaration de variables</li>
@@ -78,13 +79,14 @@
                 <li>types de données primitives JS : null, undefined, symbol.</li>
                 <li>classes (objet) : fontionne comme une variable mais sa valeur est entre {}. Dans les {} on insère "clé1: valeur1, clé2: valeur2, etc...". Pour accéder à ces valeurs on tape "class.key". <br>
                 Pour créer une classe on utilise <br>
-                <div class="code_section">
-                class NomClasse { <br>
-                constructor(arg1, arg2, arg3){ <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg1 = arg1; <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg2 = arg2; <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;this.arg3 = arg3; } <br>
-                    } <br>
+                <div class="pre_code">javascript</div>
+                <div class="code code__js">
+                <span class="code__line">1</span><span class="code__js--class">class</span> NomClasse { <br>
+                <span class="code__line">2</span>constructor(arg1, arg2, arg3){ <br>
+                <span class="code__line">3</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__js--mot_cle">this</span>.arg1 = arg1; <br>
+                <span class="code__line">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__js--mot_cle">this</span>.arg2 = arg2; <br>
+                <span class="code__line">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__js--mot_cle">this</span>.arg3 = arg3; } <br>
+                <span class="code__line">6</span>} <br>
                 </div>
                     Pour créer une instance on utilise "new" : <br>
                     <div class="code_section">let nomInstance = new NomClasse("arg1, arg2, arg3) ;</div></li>
@@ -98,18 +100,24 @@
             Un "set" ou ensemble, est une liste non ordonnée. Les "map" sont comme un array, fonctionnent sur le principe d'une liste ordonnée avec clé-valeur à la différence qu'elles ne se limitent pas aux strings et peuvent être manipulées.
             
         </p>
-
-        <hr>
-        <div class="under"><h3>Le JavaScript pour le web</h3></div>
+        <br>
+    <h2>Le JavaScript pour le web</h2>
+        <div class="under"><h3>Le DOM</h3></div>
             <p>
             Le DOM corresponds à l'arbre de notre fichier comme suit : <br>
-            <img src="./img/DOM_tree.jpg" alt="DOM"> <br>
-            Dans notre DOM, en associant une constante, on va pouvoir rechercher des éléments en fonction de leurs types dans un document:
+            <img src="./img/DOM1.jpg" alt="DOM"> <br>
+            Dans notre DOM, en associant une constante, on va pouvoir rechercher des éléments en accédant à la racine du DOM. On utilisera la variable <strong>document</strong> qui correspond à l'élement &lthtml&gt. <br>
+            if (document.body.nodeType === document.ELEMENT_NODE) { <br>
+                console.log("Body est un noeud élément"); <br>
+            } else { // (soit document.TEXT_NODE))<br>
+                console.log("Body est un noeud textuel"); <br>
+            } <br>
+            document.body.childNodes[0] donne accès au premier enfant du noeud body.<br> Les espaces entre les balises ainsi que les retours à la ligne dans le code HTML sont considérés par le navigateur comme des nœuds textuels.
                 <ul>
                     <li>Par <strong>id</strong> avec document.getElementById(""), c'est une méthode précise car il n'existe qu'un élément par id</li>
                     <li>Par <strong>class</strong> avec document.getElementsByClassName("") qui nous sortira une liste des éléments de la classe, on peut ajuster la recherche à l'aide d'index</li>
                     <li>Par <strong>tag</strong> avec document.getElementsByTagName(""). On obitendra une liste également</li>
-                    <li>Par <strong>sélecteur</strong> avec document.querySelector("") qui fonctionne de manière plus complexe, par exemple : <em>document.querySelector("#myId p.article > a")</em> ira chercher dans l'élément ayant pour id  #myId , les éléments de type &ltp&gt qui ont pour classe  article,
+                    <li>Par <strong>sélecteur</strong> avec document.querySelector("") - document.querySelectorAll("") qui fonctionne de manière plus complexe, par exemple : <em>document.querySelector("#myId p.article > a")</em> ira chercher dans l'élément ayant pour id  #myId , les éléments de type &ltp&gt qui ont pour classe  article,
                          afin de récupérer le lien &lta&gt qui est un enfant direct (pas des enfants de ses enfants). Il renverra le 1er résultat ou <em>null</em> si aucun élément n'est trouvé</li>
                 </ul>
             On peut aussi parcourir des enfants et parents d'élements :
@@ -118,12 +126,34 @@
                     <li>Pour <strong>parents</strong> : element.parentElement retourne l'élément parent de celui-ci</li>
                     <li>Pour ce qui l'<strong>entoure</strong> : element.nextElementSibling / element.previousElementSibling permet de naviguer vers l'élément suivant / précédent de même niveau</li>
                 </ul>
+            On pourra par la suite sélectionner avec précision : <br>
+            var titresElts = document.getElementsByTagName("h2"); // Tous les titres h2 <br>
+            console.log(titresElts[0]); // Affiche le premier titre h2 <br>
+            console.log(titresElts.length); // Affiche 3 <br> <br>
+            On peut afficher une liste d'éléments : <br>
+            // Tous les éléments ayant la classe "merveilles" <br>
+            var merveillesElts = document.getElementsByClassName("merveilles"); <br>
+            for (var i = 0; i < merveillesElts.length; i++) { <br>
+                console.log(merveillesElts[i]); <br> <br>
+}
+            // Affiche les noeuds enfant du noeud body <br>
+            for (var i = 0; i < document.body.childNodes.length; i++) { <br>
+                console.log(document.body.childNodes[i]); <br>
+            } <br>
+            var h1 = document.body.childNodes[1]; <br>
+            console.log(h1.parentNode); // Affiche le noeud body <br> <br>
+            console.log(document.parentNode); // Affiche null : document n'a aucun noeud parent <br>
+            Il existe d'autres <a href="https://developer.mozilla.org/fr/docs/Web/API/Node">propriétés</a> pour naviguer entre les objets du DOM. <br>
+            Le nom de la variabletitresEltsstockant la liste des titres se termine parElts, abréviation de "éléments". Cela permet d'indiquer que le contenu de cette variable correspond à des éléments du DOM, et non à de simples valeurs. Il s'agit d'une bonne pratique que nous allons adopter pour toute la suite de ce cours. Une variable stockant un seul élément du DOM sera suffixée parElt, abréviation de "élément".
             </p>
         <hr>
         <div class="under"><h3>Modifier le DOM</h3></div>
             <h4>Modifier le contenu d'un élément</h4>
                 <p>
                 Définir une valeur à <em>innerHTML</em> ou <em>textContent</em> remplace directement le contenu actuel de l'élément par celui que vous précisez. <br>
+                // Modification du contenu HTML de la liste : ajout d'un langage <br>
+                document.getElementById("langages").innerHTML += '&ltli id="c"&gtC&lt/li&gt'; <br>
+                Il est souvent utilisé pour "vider" un élément de son contenu : document.getElementById("langages").innerHTML = "";
                 </p>
             <h4>Modifier les classes</h4>
                 <p>
@@ -149,7 +179,14 @@
                         <li>elt.setAttribute("name", "my-password") change le nom de l'input en my-password</li>
                         <li>elt.getAttribute("name") retourne my-password</li>
                     </ul>
-                    On peut utiliser les fonctions getAttribute et removeAttribute.
+                    // Définition de l'attribut "id" du premier titre <br>
+                    document.querySelector("h1").setAttribute("id", "titre"); <br>
+                    document.querySelector("h1").id = "titre"; <br> <br>
+                    On peut utiliser les fonctions getAttribute et removeAttribute. <br>
+                    // L'identifiant de la première liste <br>
+                    console.log(document.querySelector("ul").id); <br> <br>
+                    // L'attribut href du premier lien <br>
+                    console.log(document.querySelector("a").href); <br>
                 </p>
             <h4>Créer de nouveaux éléments</h4>
                 <p>
@@ -163,15 +200,94 @@
                 Exemple : <br>            
                 const newElt = document.createElement("div"); <br>
                 let elt = document.getElementById("main"); <br>            
-                elt.appendChild(newElt);
+                elt.appendChild(newElt); <br> <br>
+                var pythonElt = document.createElement("li"); // Création d'un élément li <br>
+                pythonElt.id = "python"; // Définition de son identifiant <br>
+                pythonElt.textContent = "Python"; // Définition de son contenu textuel <br>
+                document.getElementById("langages").appendChild(pythonElt); // Insertion du nouvel élément <br>
+                Dans l'exemple précédent, nous avons défini le contenu textuel du nouvel élément à l'aide de la propriététextContent. Il est possible d'aboutir au même résultat en ajoutant au nouvel élément un noeud 
+                fils de type texte. Pour cela, on utilise la méthodecreateTextNodequi, comme son nom l'indique, crée un nouveau noeud de type texte. Ensuite, on ajoute le noeud texte à l'élément avecappendChild. <br>
+                var rubyElt = document.createElement("li"); // Création d'un élément li <br>
+                rubyElt.id = "ruby"; // Définition de son identifiant <br>
+                rubyElt.appendChild(document.createTextNode("Ruby")); // Définition de son contenu textuel <br>
+                document.getElementById("langages").appendChild(rubyElt); // Insertion du nouvel élément <br>
                 </p>
-            <h4>Supprimez et remplacez des éléments</h4>
+            <h4>Ajout d'un noeud avant un noeud</h4>
+                <p>
+                var perlElt = document.createElement("li"); // Création d'un élément li <br>
+                perlElt.id = "perl"; // Définition de son identifiant <br>
+                perlElt.textContent = "Perl"; // Définition de son contenu textuel <br>
+                // Ajout du nouvel élément avant l'identifiant identifié par "php" <br>
+                document.getElementById("langages").insertBefore(perlElt, document.getElementById("php")); <br> <br>
+                // Ajout d'un élément au tout début de la liste <br>
+                document.getElementById('langages').insertAdjacentHTML("afterBegin",  <br>
+                    '&ltli id="javascript"&gtJavaScript&lt/li&gt'); <br>
+                </p>
+            <h4>Choix de la position exacte du nouveau noeud</h4>
+                <p>
+                    <ul>
+                        <li><strong>beforebegin</strong> : avant l'élément existant lui-même</li>
+                        <li><strong>afterbegin</strong> : juste à l'intérieur de l'élément existant, avant son premier enfant</li>
+                        <li><strong>beforeend</strong> : juste à l'intérieur de l'élément existant, après son dernier enfant</li>
+                        <li><strong>afterend</strong> : après l'élément existant lui-même</li>
+                    </ul>
+                </p>
+            <h4>Supprimer et remplacer des éléments</h4>
                 <p>
                 elt.removeChild(newElt) supprime l'élément newElt de l'élément elt. <br>
                 elt.replaceChild(document.createElement("article"), newElt) remplace l'élément newElt par un nouvel élément de type article.
                 </p>
+            <h4>Trouver des éléments</h4>
+                <p>
+                    if (document.getElementById("antiques").classList.contains("merveille")) { <br>
+                        console.log("L'élément identifié par antiques possède la classe merveille"); <br>
+                    } else { <br>
+                        console.log("L'élément identifié par antiques ne possède pas la classe merveille"); <br>
+                    } <br>
+                    <a href="https://developer.mozilla.org/fr/docs/Web/API/Element"></a>
+                </p>
+            <h4>Modifier le style d'un élément</h4>
+                <p>
+                Certaines propriétés CSS s'écrivent sous la forme d'un nom composé. Pour utiliser ces propriétés en JavaScript, il faut supprimer le tiret et écrire la première lettre du mot suivant en majuscule.
+                </p>
+                <h5>La propriété style</h5>
+                    <p>
+                    Les éléments du DOM disposent d'une propriété nommée style qui renvoie un objet représentant l'attribut  style de l'élément. Les propriétés de cet objet correspondent aux propriétés CSS de l'élément.  <br>
+                    var pElt = document.querySelector("p"); <br>
+                    pElt.style.color = "red"; <br>
+                    pElt.style.margin = "50px"; <br>
+                    Un style définit dans la feuille css n'est pas récupérable en JavaScript via la propriété style.
+                    </p>
+                <h5>La fonction getComputedStyle</h5>
+                    <p>
+                    Elle prend en paramètre un noeud du DOM et renvoie un objet représentant son style. On peut ensuite consulter les différentes propriétés CSS de cet objet.
+                    </p>
+        <hr>
+        <div class="under"><h3>Les formulaires</h3></div>
+            <h4>Gestion de focus</h4>
+                <p>
+                // Affichage d'un message contextuel pour la saisie du pseudo <br>
+                pseudoElt.addEventListener("focus", function () {<br>
+                    document.getElementById("aidePseudo").textContent = "Entrez votre pseudo"; <br>
+                }); <br>
+                // Suppression du message contextuel pour la saisie du pseudo <br>
+                pseudoElt.addEventListener("blur", function (e) { <br>
+                    document.getElementById("aidePseudo").textContent = "";<br>
+                });                <br>
+                Depuis le code JavaScript, on peut modifier la cible de saisie en appelant les méthodesfocus(pour donner le focus) etblur(pour l'enlever) sur un élément du DOM. <br>
+                // Focus sur la zone de saisie du pseudo <br>
+                pseudoElt.focus(); <br>
+                </p>
+            <h4>Les éléments d'options</h4>
+                <p>
+                
+                </p>
         <hr>
         <div class="under"><h3>Ecouter les évènements</h3></div>
+            <p>
+            Element est la classe de base la plus générale à partir de laquelle tous les objets d'un Document héritent. <br>
+            Les programmes JavaScript que nous avons écrits jusqu'ici s'exécutaient automatiquement dès leur chargement par la page web. L'ordre d'exécution des instructions était déterminé à l'avance et les interactions avec l'utilisateur se limitaient à la saisie de valeurs au moyen de l'instruction <strong>prompt</strong>.
+            </p>
             <dl>
                 <dt><strong>Evènement</strong></dt><dd>Un événement est une réaction à une action émise par l'utilisateur, comme le clic sur un bouton ou la saisie d'un texte dans un formulaire. <br>
                 En JavaScript, il est représenté par un nom ( click ,  mousemove ...) et une fonction que l'on nomme une  <strong>callback</strong> . Un événement est par défaut propagé, c'est-à-dire que si nous n'indiquons pas à l'événement que nous le traitons, il sera transmis à l'élément parent, et ainsi de suite jusqu'à l'élément racine</dd>
@@ -181,6 +297,11 @@
                 La fonction addEventListener() permet d'écouter tous types d'événements. <br>
                 addEventListener(&ltevent&gt, &ltcallback&gt) prend en paramètres le nom de l'événement à écouter et la fonction à appeler dès que l'événement est exécuté. <br>
                 On pourra se référer à la <a href="https://developer.mozilla.org/fr/docs/Web/Events" target="blank">liste des évènements</a>. <br>
+                // Ajout d'un gestionnaire qui affiche le type et la cible de l'événement <br>
+                document.getElementById("bouton").addEventListener("click", function (e) { <br>
+                    console.log("Evènement : " + e.type +  <br>
+                        ", texte de la cible : " + e.target.textContent); <br>
+                }); <br>
                 <dl>
                     <dt><strong>addEventListener()</strong></dt><dd>const elt = document.getElementById('mon-lien');.....On récupère l'élément sur lequel on veut détecter le clic <br>
                         elt.addEventListener('click', function() {.....................On écoute l'événement click <br>
@@ -201,6 +322,30 @@
                         elementAvecMessage.innerHTML = "Message de l'élément intérieur"; <br>
                         });</dd>
                 </dl>
+                </p>
+            <h4>Réagir au clavier</h4>
+                <p>
+                // Gestion de l'appui sur une touche du clavier produisant un caractère <br>
+                document.addEventListener("keypress", function (e) { <br>
+                    console.log("Vous avez appuyé sur la touche " + String.fromCharCode(e.charCode)); <br>
+                }); <br>
+                Pour gérer l'appui et le relâchement sur n'importe quelle touche du clavier (pas seulement celles qui produisent des caractères), on utilise les événements <strong>keydown</strong> et <strong>keyup</strong>.
+                </p>
+            <h4>Fin du chargement de la page web</h4>
+                <p>
+                    // Gestion de la fin du chargement de la page web <br>
+                    window.addEventListener("load", function () { <br>
+                        console.log("Page entièrement chargée"); <br>
+                    }); <br>
+                </p>
+            <h4>Fermeture de la page web</h4>
+                <p>
+                // Gestion de la fermeture de la page web <br>
+                window.addEventListener("beforeunload", function (e) { <br>
+                    var message = "On est bien ici !"; <br>
+                    e.returnValue = message; // Provoque une demande de confirmation (standard) <br>
+                    return message; // Provoque une demande de confirmation (certains navigateurs) <br>
+                }); <br>
                 </p>
         <hr>
         <div class="under"><h3>Récupérer des données utilisateur</h3></div>
@@ -307,5 +452,228 @@
                     </dl>
                     Il n'est pas nécessaire de le <em>parser</em>. C'est-à-dire que notre application doit le lire et le comprendre afin d'en faire ce qu'on veut, votre navigateur sait directement le lire et le transformer en objets JavaScript.
                 </p>
+        <hr>
+        <div class="under"><h3>Valider les données saisies utilisateur</h3></div>
+            <p>
+            Ne faites jamais confiance aux données saisies par vos utilisateurs ! <br>
+            Certains de vos utilisateurs peuvent être malveillants ou ils peuvent ne pas bien comprendre ce que vous souhaitez qu'ils fassent. <br>
+            Ainsi, pour vérifier qu'une saisie commence par <strong>Hello</strong>, on code : <br>
+            myInput.addEventListener('input', function(e) { <br>
+                var value = e.target.value; <br>
+                if (value.startsWith('Hello ')) { <br>
+                    isValid = true; <br>
+                } else { <br>
+                    isValid = false; <br>
+                } <br>
+            });
+            </p>
+            <h4>Regex</h4>
+                <p>
+                Si l'on veut savoir si notre texte commence par la lettre <em>e</em> et est suivi d'au moins 3 chiffres, on écrira la regex suivante : <br>
+                function isValid(value) { <br>
+                    return /^e[0-9]{3,}$/.test(value); <br>
+                } <br>
+                > <a href="https://regexr.com">Regex</a> <br>
+                Il est aussi possible depuis HTML5 d'utiliser les contraintes HTML pour cibler un type de saisie. > <a href="https://developer.mozilla.org/fr/docs/Web/Guide/HTML/HTML5/Constraint_validation">Doc !</a> <br>
+                </p>
+        <hr>
+        <div class="under"><h3>Sauvegardez des données sur le service web</h3></div>
+            <h4>La requête POST</h4>
+                <p>
+                    var request = new XMLHttpRequest(); <br>
+                    request.open("POST", "http://url-service-web.com/api/users"); <br>
+                    request.setRequestHeader("Content-Type", "application/json"); <br>
+                    request.send(JSON.stringify(value)); <br>
+                </p>
+        <hr>
+        <div class="under"><h3>L'asynchrone en JS</h3></div>
+        <p>
+            JavaScript est synchrone et mono-thread : lorsqu'on écrit du code, chaque ligne sera exécutée l'une après l'autre en attendant la fin de l'exécution de la ligne précédente. <br>
+            du code asynchrone va s'exécuter ligne après ligne, mais la ligne suivante n'attendra pas que la ligne asynchrone ait fini son exécution. <br>
+        </p>
+            <h4>L'event loop</h4>
+                <p>
+                    <dl>
+                        <dt><strong>setTimout</strong></dt><dd>Fonction la plus répandue pour exécuter du code asynchrone sans bloquer le fil d'exécution en cours. <br>
+                            Elle prend 2 paramètres :
+                            <ul>
+                                <li>La fonction à exécuter de manière asynchrone (qui sera donc ajoutée à la file d'attente de l'event loop)</li>
+                                <li>Le délai, en millisecondes, avant d'exécuter cette fonction</li>
+                            </ul> </dd>
+                    </dl>
+                    setTimeout(function() { <br>
+                        console.log("I'm here!") <br>
+                    }, 5000); <br>                    
+                    console.log("Where are you?"); <br>
+                    "I'm here!" s'affichera donc 5 sec après. <br>
+                    On peut passer l'identifiant que nous renvoie setTimeout en paramètre à la fonction clearTimeout pour annuler l'exécution asynchrone de la fonction avant qu'elle ne soit exécutée. <br>
+                    On notra quand même 2 fonctions peu utilisées :
+                        <ul>
+                            <li><strong>setInterval</strong> : elle fonctionne exactement comme  setTimeout , à ceci près qu'elle exécute la fonction passée en paramètre en boucle à une fréquence déterminée par le temps en millisecondes passé en second paramètre. Il suffira de passer la valeur de retour de  setInterval  à  clearInterval  pour stopper l'exécution en boucle de la fonction</li>
+                            <li><strong>setImmediate</strong> : cette fonction prend en seul paramètre la fonction à exécuter de façon synchrone.  La fonction en question sera placée dans la file d'attente de l'event loop, mais va passer devant toutes les autres fonctions, sauf certaines spécifiques au Javascript : les événements (les mêmes qu'on a vus au premier chapitre, et qui sont donc exécutés de façon asynchrone  😉), le rendu, et l'I/O. Il existe aussi  nextTick , qui permet, là, de court-circuiter tout le monde. À utiliser avec précaution, donc...</li>
+                        </ul>
+                </p>
+            <h4>Le cas de l'I/O</h4>
+                <p>
+                    <dl>
+                        <dt><strong>I/O</strong></dt><dd>correspond aux événements liés à l'input(les flux d'entrée) et l'output(les flux de sortie). Cela correspond notamment à la lecture/écriture des fichiers, aux requêtes HTTP, etc</dd>
+                        
+                    </dl>
+                A l'instar de la fonction send(), une fonction asynchrone, et tout ce qui touche à l'I/O peut être exécuté de manière asynchrone.
+                </p>
+            <h4>Callbacks</h4>
+                <p>
+                La fonction qui est envoyée à  addEventListener  est une callback. Elle n'est pas appelée tout de suite, elle est appelée plus tard, dès que l'utilisateur déclanche l'élément. Ça ne bloque donc pas l'exécution du code et c'est donc asynchrone. <br>
+                Par exemple, lorsque nous définissions une fonction dans la propriété  onreadystatechange, nous étions en train de lui définir une callback. De la même manière, la fonction que nous passons en paramètre à  setTimeout  est une callback.
+                </p>
+            <h4>Gérer les erreurs</h4>
+                <p>
+                Pour gérer les erreurs avec les callbacks, la méthode la plus utilisée est de prendre 2 paramètres dans notre callback. Le 2e paramètre est notre donnée et le 1er est l'erreur. Si elle n'est pas null ou undefined,  elle contiendra un message d'erreur indiquant qu'une erreur est intervenue. <br>
+                fs.readFile(filePath, function(err, data) { <br>
+                    if (err) { <br>
+                        throw err; <br>
+                    } <br>
+                    // Do something with data <br>
+                }); <br>
+                </p>
+            <h4>Promises</h4>
+                <p>
+                    <dl>
+                        <dt><strong>Promise</strong> - promesse</dt><dd>Lorsque l'on exécute du code asynchrone, celui-ci va immédiatement nous retourner une "promesse" qu'un résultat nous sera envoyé prochainement. <br>
+                        Cette promesse est en fait un objet Promise qui peut être  resolve  avec un résultat, ou  reject  avec une erreur. <br>
+                        Lorsque l'on récupère une  Promise , on peut utiliser sa fonction  then()  pour exécuter du code dès que la promesse est résolue, et sa fonction  catch()  pour exécuter du code dès qu'une erreur est survenue.</dd>
+                    </dl>
+                    functionThatReturnsAPromise() <br>
+                    .then(function(data) { <br>
+                        // Do somthing with data <br> 
+                    }) <br>
+                    .catch(function(err) { <br>
+                        // Do something with error <br>
+                    }); <br>
+                    <strong>Le chaînage</strong> :
+                    returnAPromiseWithNumber2() <br>
+                    .then(function(data) { // Data is 2 <br>
+                        return data + 1; <br>
+                    }) <br>
+                    .then(function(data) { // Data is 3 <br>
+                        throw new Error('error'); <br>
+                    }) <br>
+                    .then(function(data) { <br>
+                        // Not executed  <br>
+                    }) <br>
+                    .catch(function(err) { <br>
+                        return 5; <br>
+                    }) <br>
+                    .then(function(data) { // Data is 5 <br>
+                        // Do something <br>
+                    }); <br>
+                </p>
+            <h4>Async/await</h4>
+                <p>
+                    async function fonctionAsynchrone1() {/* code asynchrone */} <br>
+                    async function fonctionAsynchrone2() {/* code asynchrone */} <br>
+                    <br>
+                    async function fonctionAsynchrone3() { <br>
+                     const value1 = await fonctionAsynchrone1(); <br>
+                     const value2 = await fonctionAsynchrone2(); <br>
+                     return value1 + value2; <br>
+                    } <br>
+                    <strong>async / await</strong> utilisant les Promises, la levée d'une erreur se fait aussi par une exception. <br>
+                    Pour intercepter cette erreur, par contre, il suffit d'exécuter notre code asynchrone dans un bloc  try {} catch (e) {} , l'erreur étant envoyée dans le catch.
+                </p>
+        <hr>
+        <div class="under"><h3>Paralléliser plusieurs requêtes HTTP</h3></div>
+            <h4>Enchaîner les requêtes</h4>
+                <h5> Avec les callbacks</h5>
+                    <p>
+                        var GETRequestCount = 0; <br>
+                        var GETRequestResults = []; <br>
+                        function onGETRequestDone(err, result) { <br>
+                            if (err) throw err; <br>                        
+                            GETRequestCount++; <br>
+                            GETRequestResults.push(result); <br>                        
+                            if (GETRequestCount == 2) { <br>
+                                post(url3, function(err, result) { <br>
+                                    if (err) throw err; <br>                                
+                                    // We are done here ! <br>
+                                }); <br>
+                            } <br>
+                        } <br>                    
+                        get(url1, onGETRequestDone); <br>
+                        get(url2, onGETRequestDone); <br>
+                    Si on atteint 2 (le nombre de requêtes  GET qu'on a faites), alors on va exécuter la requête  POST. <br>
+                    GETRequestResults  sert à conserver les réponses des requêtes  GET , car on ne les a pas toutes les 2 en même temps.
+                    </p>
+                <h5>Avec les Promises</h5>
+                    <p>
+                        Promise.all([get(url1), get(url2)]) <br>
+                        .then(function(results) { <br>
+                            return Promise.all([results, post(url3)]]; <br>
+                        }) <br>
+                        .then(function(allResults) { <br>
+                            // We are done here ! <br>
+                        }); <br>
+                    </p>
+                <h5>Avec async/await</h5>
+                    <p>
+                        async function requests() { <br>
+                            var getResults = await Promise.all([get(url1), get(url2)]); <br>
+                            var postResult = await post(url3); <br>
+                            return [getResults, postResult]; <br>
+                        } <br>                        
+                        requests().then(function(allResults) { <br>
+                            // We are done here ! <br>
+                        }); <br>
+                    </p>
+        <hr>
+        <div class="under"><h3>Optimiser son code</h3></div>
+            <h4>Linter, minifier, bundler, transpiler</h4>
+                <p>
+                <dl>
+                    <dt><strong>Linter</strong></dt><dd>Le linter est un programme qui va analyser notre code et détecter les erreurs de syntaxe, les variables non utilisées, les variables qui n'existent pas, la mauvaise organisation du code, le non-respect des bonnes pratiques d'écriture de code. <br>
+                    Voici quelques exemples de linters : <a href="https://www.jslint.com">JSLint</a>, <a href="https://eslint.org">ESLint</a>.</dd>
+                    <dt><strong>Minifier</strong></dt><dd>Le Minifier va essayer de rendre votre code le plus léger possible en retirant les espaces et retours à la ligne inutiles, en renommant vos variables avec des noms plus courts, en supprimant le code non utilisé, en supprimant les commentaires, en optimisant certains bouts de code pour les réécrire avec une syntaxe plus légère, etc... <br>
+                    Voici quelques exemples de minifiers : <a href="https://github.com/srod/node-minify">node-minify</a>, <a href="https://github.com/mishoo/UglifyJS#readme">UglifyJS</a>.</dd>
+                    <dt><strong>Bundler</strong></dt><dd>Le Bundler va se charger de packager votre code pour qu'il tienne dans un seul fichier. <br>
+                    Voici un exemple de bundler : <a href="https://webpack.js.org">Webpack</a>.</dd>
+                    <dt><strong>Transpiler</strong></dt><dd>Le Transpiler permet de coder avec la dernière version de JavaScript tout en étant compatible avec tous les navigateurs. <br>
+                    Voici un exemple de transpiler : <a href="https://babeljs.io">Babel</a>.</dd>
+                </dl>
+                </p>
+        <hr>
+        <div class="under"><h3>Gérer les dépendances</h3></div>
+            <p>
+                <dl>
+                    <dt><strong>NPM</strong> - gestionnaire de paquets (package manager)</dt><dd> Programme qui vous permet d'installer très facilement des modules pour le JavaScript, et cela comprend les outils dont nous avons parlé dans les chapitres précédents.</dd>
+                    <dt><strong>Module</strong></dt><dd>Bout de code qui résout une problématique commune à beaucoup de développeurs : comme un parser XML, un générateur d'uuid (des identifiants uniques), un router, un framework de rendu HTML, etc.</dd>
+                </dl>
+            > Node.js
+            </p>
+        <hr>
+        <div class="under"><h3>Compiler et exécuter son code</h3></div>
+            <p>
+            <ol>
+                <li>Initialiser avec <strong>npm init</strong></li>
+                <li>Installation de Webpack avec <strong>npm install webpack webpack-cli --save-dev</strong></li>
+                <li>Projet de base : 
+                    <ul>
+                        <li>project
+                            <ul>
+                                <li>- package.json</li>
+                                <li>- index.html</li>
+                                <ul> 
+                                    <li>src
+                                        <ul><li>- index.js</li>
+                                            <li>- query.js</li>                                    
+                                        </ul>
+                                    </li>
+                            </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            
+            </p>
 </body>
 </html>

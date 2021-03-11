@@ -60,7 +60,7 @@ body{
                 position: relative;
                 width: 100%;
                 height: $top_side;
-                background : url('../../../img/banniere2.jpeg');
+                background : url('../../img/banniere2.jpeg');
                 #separation_border{
                     z-index: 1;
                     position: absolute;
@@ -108,3 +108,7 @@ body{
 }
 
 
+.nav_unavailable {
+    text-decoration: line-through;
+    opacity: .5;
+}

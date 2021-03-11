@@ -21,17 +21,17 @@
             <h2><a href="index.html">Menu</a></h2>
             <div id="menu_line">
                 <ul>
-                    <li><a href="">Découverte métier</a></li>
+                    <li><a class="nav_unavailable" href="">Découverte métier</a></li>
                     <li><a href="html_css.html">HTML, CSS : kececé ?</a></li>
-                    <li><a href="">Transformer une maquette en site Web</a></li>
+                    <li><a class="nav_unavailable" href="">Transformer une maquette en site Web</a></li>
                     <li><a href="animations_css.html">animations CSS</a></li>
-                    <li><a href="">Optimisation site web</a></li>
+                    <li><a class="nav_unavailable" href="">Optimisation site web</a></li>
                     <li><a href="javascript_bootstrapp.html">Javascript & bootstrapp</a></li>
-                    <li><a href="">Les API</a></li>
-                    <li><a href="">Bases de données</a></li>
-                    <li><a href="">Projets de cours</a></li>
-                    <li><a href="">Projets externes</a></li>
-                    <li><a href="">piste poursuite d'études</a></li>
+                    <li><a class="nav_unavailable" href="">Les API</a></li>
+                    <li><a class="nav_unavailable" href="">Bases de données</a></li>
+                    <li><a class="nav_unavailable" href="">Projets de cours</a></li>
+                    <li><a class="nav_unavailable" href="">Projets externes</a></li>
+                    <li><a class="nav_unavailable" href="">piste poursuite d'études</a></li>
                 </ul>
              </div>
         </nav>
@@ -69,49 +69,7 @@
                         <div class="image_side"><img id="img_index" src="./img/lukas.jpg" alt="img_welcome"></div>
                     </div>
                     </article>
-                    <h2>Le GRID</h2>
-                        <p>
-                        Grid en CSS : <br>
-                        On commencera par la création d'un grid-container avec le display : grid. <br>
-                        <ul>
-                            <li><strong>Colonnes</strong> grid-template-columns en px. Pour 3 colonnes, décrire 3 mesures</li>
-                            <li><strong>Rangées</strong> grid-template-rows (px)</li>
-                            <li><strong>Rangées auto</strong> grid-auto-rows(px) pour définir la valeur par défaut</li>
-                            <li><strong>Gap</strong> grid-column-gap ou grid-row-gap ou encore grid-gap (px)</li>
-                            <li><strong>fr</strong> : l'unité fr s'adapte à l'espace disponible sur l'écran.</li>
-                            <li><strong>repeat</strong> : grid-template-columns : 100 px repeat(2, 1fr 2fr)</li>
-                            <li><strong>minmax</strong> grid-template-columns : minmax(200px, 250px) 1fr 1fr <br>
-                            on peut utiliser minmax dans le grid auto : minmax(60px, auto)</li>
-                            <li><strong>auto-flow</strong> place les éléments du grid par colonne ou par rangée. grid-auto-flow : column</li>
-                            <li><strong>order</strong> fonctionne comme sur flexbox. order : x</li>
-                            <li><strong>auto fill</strong> grid-template-columns: repeat(auto-fill, minmax(50px 1fr))</li>
-                            <li><strong>auto fit</strong> grid-template-columns: repeat(auto-fit, minmax(50px 1fr)) remplit le container</li>
-                            <li><strong>auto-placement</strong> grid-column-end ou grid-row-end : span x</li>
-                            <li><strong>gap filling</strong> Dans le grid : grid-auto-flow : dense;</li>
-                            <li><strong>placement</strong> grid-row : x <br>
-                            1 est la première ligne, -1 est la dernière donc grid-column : 1 / -1</li>
-                            <li><strong>Line-based positionning</strong> .class:nth-child(x) { <br>
-                                grid-column-start : x; <br>
-                                grid-column-end : -x; <br>
-
-                            } <br>
-                            ou grid-column : x / -x; <br>
-                            ou grid-column : x / span x;</li>
-                            <li><strong>Named lines</strong>grid-template-columns : 2fr [content-start] 4fr [content end]; <br>
-                            grid-template-rows : auto [content-start] auto [content-end]. On peut maintenant utiliser ces noms pour placer les éléments du grid sur l'enmplacement nommé.</li>
-                            <li><strong>justify</strong> justify-items / align-items : stretch, start, end, center;</li>
-                            <li><strong>align-self</strong> aligne-self pour les éléments dans le grid area.</li>
-                            <li><strong>L'alignement du grid</strong> On peut ajouter une border au grid, et utiliser justify-content ou align-content avec les paramètres de flexbox</li>
-                            <li><strong>areas</strong> grid-template-areas permet de placer les éléments nommés avec grid-area. Un point "." ou "..." place un élément vide.</li>
-                            <li>Les noms définits dans grid-area peut s'utiliser pour placer d'autres éléments autour ou même sur un élément existant.</li>
-                            <li><strong>display-content</strong> change des enfants non-directs en enfants directs.</li>
-                            <li><strong>stacking</strong> est possible, on peut aussi utiliser z-index.</li>
-                            <li><strong>Anonymous</strong> items si c'est un string, agit comme un grid item.</li>
-                            <li>Feature Queries : @supports(diplay : grid) {...} permet d'affichier ou non un item selon le browser.</li>
-                            <li><strong>Track Sizing</strong> width : min-content; permet d'ajuster la largeur sur le mot le plus long de la string. max-content s'ajuste à la taille du string(risque d'overflow). <br>
-                            fit-content(em or %) stretch autant qu'il peut jusqu'au max em ou %.</li>
-                        </ul>
-                        </p>
+                    
                 </section>
             </div>
         </div>
